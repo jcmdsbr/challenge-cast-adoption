@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq.Expressions;
-using System.Text;
-using SGA.Domain.Entities.Core;
 
-namespace SGA.Application.Repository
+namespace SGA.Application.Repository.Core
 {
-    public interface IRepository<TEntity> 
+    public interface IRepository<in TEntity>
     {
         void Add(TEntity entity);
         void Update(TEntity entity);

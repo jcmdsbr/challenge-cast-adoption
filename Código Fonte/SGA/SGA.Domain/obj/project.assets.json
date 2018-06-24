@@ -426,6 +426,20 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
+      "SGA.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "SGA.Domain.Entities": "1.0.0",
+          "SGA.Infra.CrossCutting": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SGA.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SGA.Application.dll": {}
+        }
+      },
       "SGA.Domain.Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
@@ -2105,6 +2119,11 @@
         "system.threading.tasks.nuspec"
       ]
     },
+    "SGA.Application/1.0.0": {
+      "type": "project",
+      "path": "../SGA.Application/SGA.Application.csproj",
+      "msbuildProject": "../SGA.Application/SGA.Application.csproj"
+    },
     "SGA.Domain.Entities/1.0.0": {
       "type": "project",
       "path": "../SGA.Domain.Entities/SGA.Domain.Entities.csproj",
@@ -2120,6 +2139,7 @@
     ".NETCoreApp,Version=v2.0": [
       "FluentValidation >= 7.6.103",
       "Microsoft.NETCore.App >= 2.0.0",
+      "SGA.Application >= 1.0.0",
       "SGA.Domain.Entities >= 1.0.0",
       "SGA.Infra.CrossCutting >= 1.0.0"
     ]
@@ -2154,6 +2174,9 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
+            "C:\\Projetos\\Git\\DesafioCast\\Código Fonte\\SGA\\SGA.Application\\SGA.Application.csproj": {
+              "projectPath": "C:\\Projetos\\Git\\DesafioCast\\Código Fonte\\SGA\\SGA.Application\\SGA.Application.csproj"
+            },
             "C:\\Projetos\\Git\\DesafioCast\\Código Fonte\\SGA\\SGA.Domain.Entities\\SGA.Domain.Entities.csproj": {
               "projectPath": "C:\\Projetos\\Git\\DesafioCast\\Código Fonte\\SGA\\SGA.Domain.Entities\\SGA.Domain.Entities.csproj"
             },

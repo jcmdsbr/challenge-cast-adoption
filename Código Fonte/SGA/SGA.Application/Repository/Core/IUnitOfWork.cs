@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using SGA.Infra.CrossCutting.Response;
 
-namespace SGA.Application.Repository
+namespace SGA.Application.Repository.Core
 {
     public interface IUnitOfWork : IDisposable
     {

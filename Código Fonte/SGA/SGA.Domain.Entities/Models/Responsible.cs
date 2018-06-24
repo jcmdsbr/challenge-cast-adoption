@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using SGA.Domain.Entities.Core;
 using SGA.Domain.Entities.ValueObjects;
 
@@ -14,11 +15,12 @@ namespace SGA.Domain.Entities.Models
             Email = email;
         }
 
-        protected Responsible(){}
+        protected Responsible()  { }
 
         public string Name { get; private set; }
         public Cpf Cpf { get; private set; }
 
         public Email Email { get; private set; }
+
     }
 }

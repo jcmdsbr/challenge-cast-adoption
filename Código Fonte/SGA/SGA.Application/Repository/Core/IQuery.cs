@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using SGA.Domain.Entities.Core;
 
-namespace SGA.Application.Repository
+namespace SGA.Application.Repository.Core
 {
-    public interface IQuery<TEntity> where TEntity : Entity
+    public interface IQuery<TEntity>
     {
         TEntity Find(Func<TEntity, bool> expression);
-        TEntity FindById(Guid id);
-        IEnumerable<TEntity> List();
+        ICollection<TEntity> List();
     }
 }

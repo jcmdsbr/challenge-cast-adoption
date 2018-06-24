@@ -4514,6 +4514,40 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "SGA.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "SGA.Domain.Entities": "1.0.0",
+          "SGA.Infra.CrossCutting": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SGA.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SGA.Application.dll": {}
+        }
+      },
+      "SGA.Domain.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "compile": {
+          "bin/placeholder/SGA.Domain.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SGA.Domain.Entities.dll": {}
+        }
+      },
+      "SGA.Infra.CrossCutting/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "compile": {
+          "bin/placeholder/SGA.Infra.CrossCutting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SGA.Infra.CrossCutting.dll": {}
+        }
       }
     }
   },
@@ -11649,12 +11683,29 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "SGA.Application/1.0.0": {
+      "type": "project",
+      "path": "../SGA.Application/SGA.Application.csproj",
+      "msbuildProject": "../SGA.Application/SGA.Application.csproj"
+    },
+    "SGA.Domain.Entities/1.0.0": {
+      "type": "project",
+      "path": "../SGA.Domain.Entities/SGA.Domain.Entities.csproj",
+      "msbuildProject": "../SGA.Domain.Entities/SGA.Domain.Entities.csproj"
+    },
+    "SGA.Infra.CrossCutting/1.0.0": {
+      "type": "project",
+      "path": "../SGA.Infra.CrossCutting/SGA.Infra.CrossCutting.csproj",
+      "msbuildProject": "../SGA.Infra.CrossCutting/SGA.Infra.CrossCutting.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
       "Microsoft.AspNetCore.App >= 2.1.0-preview2-final",
-      "Microsoft.NETCore.App >= 2.1.0-preview2-26406-04"
+      "Microsoft.NETCore.App >= 2.1.0-preview2-26406-04",
+      "SGA.Application >= 1.0.0",
+      "SGA.Infra.CrossCutting >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -11686,7 +11737,14 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Projetos\\Git\\DesafioCast\\Código Fonte\\SGA\\SGA.Application\\SGA.Application.csproj": {
+              "projectPath": "C:\\Projetos\\Git\\DesafioCast\\Código Fonte\\SGA\\SGA.Application\\SGA.Application.csproj"
+            },
+            "C:\\Projetos\\Git\\DesafioCast\\Código Fonte\\SGA\\SGA.Infra.CrossCutting\\SGA.Infra.CrossCutting.csproj": {
+              "projectPath": "C:\\Projetos\\Git\\DesafioCast\\Código Fonte\\SGA\\SGA.Infra.CrossCutting\\SGA.Infra.CrossCutting.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

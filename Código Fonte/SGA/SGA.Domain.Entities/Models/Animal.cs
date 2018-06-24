@@ -11,6 +11,7 @@ namespace SGA.Domain.Entities.Models
             Name = name;
             Description = description;
             TypeAnimal = typeAnimal;
+            TypeAnimalId = typeAnimal.Id;
         }
 
         protected Animal() { }
@@ -18,6 +19,10 @@ namespace SGA.Domain.Entities.Models
         public string Name { get; private set; }
 
         public string Description { get; private set; }
-        public  virtual TypeAnimal TypeAnimal { get; private set; }
+        public  TypeAnimal TypeAnimal { get; private set; }
+
+        public Guid TypeAnimalId { get; private set; }
+
+
     }
 }

@@ -1,0 +1,14 @@
+C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Application\bin\Debug\netcoreapp2.0\SGA.Application.deps.json
+C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Application\bin\Debug\netcoreapp2.0\SGA.Application.dll
+C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Application\bin\Debug\netcoreapp2.0\SGA.Application.pdb
+C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Application\bin\Debug\netcoreapp2.0\SGA.Domain.Entities.dll
+C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Application\bin\Debug\netcoreapp2.0\SGA.Infra.CrossCutting.dll
+C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Application\bin\Debug\netcoreapp2.0\SGA.Domain.Entities.pdb
+C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Application\bin\Debug\netcoreapp2.0\SGA.Infra.CrossCutting.pdb
+C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Application\obj\Debug\netcoreapp2.0\SGA.Application.csprojAssemblyReference.cache
+C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Application\obj\Debug\netcoreapp2.0\SGA.Application.csproj.CoreCompileInputs.cache
+C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Application\obj\Debug\netcoreapp2.0\SGA.Application.AssemblyInfoInputs.cache
+C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Application\obj\Debug\netcoreapp2.0\SGA.Application.AssemblyInfo.cs
+C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Application\obj\Debug\netcoreapp2.0\SGA.Application.csproj.CopyComplete
+C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Application\obj\Debug\netcoreapp2.0\SGA.Application.dll
+C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Application\obj\Debug\netcoreapp2.0\SGA.Application.pdb
