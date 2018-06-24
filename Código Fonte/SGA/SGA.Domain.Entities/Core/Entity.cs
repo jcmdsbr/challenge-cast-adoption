@@ -43,5 +43,10 @@ namespace SGA.Domain.Entities.Core
         {
             return GetType().Name + " [Id=" + Id + "]";
         }
+
+        public virtual void CreateNewId()
+        {
+            Id = Guid.NewGuid();
+        }
     }
 }
