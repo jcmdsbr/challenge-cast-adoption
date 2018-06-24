@@ -196,6 +196,16 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "SGA.Domain.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "compile": {
+          "bin/placeholder/SGA.Domain.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SGA.Domain.Entities.dll": {}
+        }
       }
     }
   },
@@ -656,11 +666,17 @@
         "netstandard.library.2.0.0.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "SGA.Domain.Entities/1.0.0": {
+      "type": "project",
+      "path": "../SGA.Domain.Entities/SGA.Domain.Entities.csproj",
+      "msbuildProject": "../SGA.Domain.Entities/SGA.Domain.Entities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-      "Microsoft.NETCore.App >= 2.0.0"
+      "Microsoft.NETCore.App >= 2.0.0",
+      "SGA.Domain.Entities >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -692,7 +708,11 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Projetos\\Git\\DesafioCast\\Código Fonte\\SGA\\SGA.Domain.Entities\\SGA.Domain.Entities.csproj": {
+              "projectPath": "C:\\Projetos\\Git\\DesafioCast\\Código Fonte\\SGA\\SGA.Domain.Entities\\SGA.Domain.Entities.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

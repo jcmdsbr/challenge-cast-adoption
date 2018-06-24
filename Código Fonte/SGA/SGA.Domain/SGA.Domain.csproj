@@ -4,4 +4,14 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="7.6.103" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SGA.Application\SGA.Application.csproj" />
+    <ProjectReference Include="..\SGA.Domain.Entities\SGA.Domain.Entities.csproj" />
+    <ProjectReference Include="..\SGA.Infra.CrossCutting\SGA.Infra.CrossCutting.csproj" />
+  </ItemGroup>
+
 </Project>

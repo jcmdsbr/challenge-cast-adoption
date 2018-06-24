@@ -670,9 +670,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projetos\\Git\\DesafioCast\\Código Fonte\\SGA\\SGA.Infra.Data\\SGA.Infra.Data.csproj",
-      "projectName": "SGA.Infra.Data",
-      "projectPath": "C:\\Projetos\\Git\\DesafioCast\\Código Fonte\\SGA\\SGA.Infra.Data\\SGA.Infra.Data.csproj",
+      "projectUniqueName": "C:\\Projetos\\Git\\DesafioCast\\Código Fonte\\SGA\\SGA.Infra.Data\\SGA.Infra.Repository.csproj",
+      "projectName": "SGA.Infra.Repository",
+      "projectPath": "C:\\Projetos\\Git\\DesafioCast\\Código Fonte\\SGA\\SGA.Infra.Data\\SGA.Infra.Repository.csproj",
       "packagesPath": "C:\\Users\\Jean Carlos\\.nuget\\packages\\",
       "outputPath": "C:\\Projetos\\Git\\DesafioCast\\Código Fonte\\SGA\\SGA.Infra.Data\\obj\\",
       "projectStyle": "PackageReference",
