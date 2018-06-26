@@ -1,6 +1,0 @@
-C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Domain.Core\bin\Debug\netcoreapp2.0\SGA.Domain.Core.deps.json
-C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Domain.Core\bin\Debug\netcoreapp2.0\SGA.Domain.Core.dll
-C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Domain.Core\obj\Debug\netcoreapp2.0\SGA.Domain.Core.csprojAssemblyReference.cache
-C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Domain.Core\obj\Debug\netcoreapp2.0\SGA.Domain.Core.csproj.CoreCompileInputs.cache
-C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Domain.Core\obj\Debug\netcoreapp2.0\SGA.Domain.Core.AssemblyInfoInputs.cache
-C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Domain.Core\obj\Debug\netcoreapp2.0\SGA.Domain.Core.AssemblyInfo.cs
