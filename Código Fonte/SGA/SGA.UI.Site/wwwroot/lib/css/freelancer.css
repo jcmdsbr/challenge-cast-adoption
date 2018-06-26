@@ -310,10 +310,19 @@ form .row:first-child .floating-label-form-group { border-top: 1px solid black; 
 
 .copyright { background-color: #1a252f; }
 
-a { color: #09f6f6; }
+a {
+    color: white
+    !important;
+}
 
-a:focus, a:hover, a:active { color: #128f76; }
+    a:focus, a:hover, a:active {
+        color: white;
+    }
 
+ 
+.black-color {
+    color:black !important;
+} 
 .btn { border-width: 2px; }
 
 .bg-primary { background-color: whitesmoke !important; }
@@ -325,14 +334,14 @@ a:focus, a:hover, a:active { color: #128f76; }
 .text-secondary { color: black !important; }
 
 .btn-primary {
-    background-color: #18BC9C;
-    border-color: #18BC9C;
+    background-color: #2c95fd;
+    border-color: #2c95fd;
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-    background-color: #128f76;
-    border-color: #128f76;
-}
+    .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+        background-color: blue;
+        border-color: blue;
+    }
 
 /*.btn-secondary {
     background-color: #2C3E50;

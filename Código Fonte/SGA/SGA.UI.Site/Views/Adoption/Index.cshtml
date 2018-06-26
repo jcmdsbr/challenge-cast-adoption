@@ -1,0 +1,48 @@
+﻿@model IEnumerable<SGA.Domain.Entities.Dtos.AdoptionDto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                CPF
+            </th>
+
+            <th>
+                Quantidade de Animais Adotados
+            </th>
+            <th>
+                Ações
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Responsible.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Responsible.Cpf.Format)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdoptedPets)
+            </td>
+            <td>
+                <a class="btn btn-dark" asp-action="Adoption" asp-route-id="@item.Responsible.Id">Realizar adoção</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

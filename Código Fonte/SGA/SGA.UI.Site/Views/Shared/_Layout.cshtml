@@ -21,20 +21,21 @@
 
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
         <div class="container">
-            <a asp-controller="Home" asp-action="Index" class="navbar-brand js-scroll-trigger">Home</a>
+            <a asp-controller="Home" asp-action="Index" class="navbar-brandr">Home</a>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <li class="dropdown">
+                        <a class="btn btn-primary dropdown-toggle"   id="dropdownCadastrar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Cadastrar
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" asp-controller="Pet">Animal</a>
-                            <a class="dropdown-item" asp-controller="Responsible">Responsável</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownCadastrar">
+                            <a class="dropdown-item black-color" asp-controller="Pet">Animal</a>
+                            <a class="dropdown-item black-color" asp-controller="Responsible">Responsável</a>
                         </div>
                     </li>
+
                     <li class="nav-item">
-                        <a class="dropdown-item" asp-controller="Adoption">Adoção</a>
+                        <a class="btn btn-primary"  asp-controller="Adoption">Adoção</a>
                     </li>
                 </ul>
             </div>
