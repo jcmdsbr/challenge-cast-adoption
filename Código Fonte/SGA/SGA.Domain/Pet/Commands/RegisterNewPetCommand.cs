@@ -1,16 +1,18 @@
 ﻿using System.Linq;
 using SGA.Application.Domain.Pet;
+using SGA.Application.Repository.Core;
 using SGA.Application.Repository.Pet;
 using SGA.Domain.Core;
 using SGA.Domain.Pet.Validations;
 
 namespace SGA.Domain.Pet.Commands
 {
-    public class RegisterNewPetCommand : Command<Entities.Models.Pet>, IRegisterNewAnimalCommand
+    public class RegisterNewPetCommand : Command<Entities.Models.Pet>, IRegisterNewPetCommand
     {
         private readonly IPetRepository _petRepository;
 
-        public RegisterNewPetCommand(IPetRepository petRepository)
+        public RegisterNewPetCommand(IPetRepository petRepository, IUnitOfWork uow)
+            : base(uow)
         {
             _petRepository = petRepository;
         }
@@ -19,16 +21,17 @@ namespace SGA.Domain.Pet.Commands
         {
             var validation = new RegisterNewPetValidation().Validate(pet);
 
-            if (validation.IsValid)
+            if (!validation.IsValid)
             {
-                pet.CreateNewId();
-
-                _petRepository.Add(pet);
-
+                AddErros(validation.Errors.Select(x => x.ErrorMessage).ToList());
                 return;
             }
 
-            AddErros(validation.Errors.Select(x => x.ErrorMessage).ToList());
+            pet.CreateNewId();
+
+            _petRepository.Add(pet);
+
+            Commit();
         }
     }
 }

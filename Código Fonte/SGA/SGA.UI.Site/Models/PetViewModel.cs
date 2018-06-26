@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using SGA.Domain.Entities.Models;
 using SGA.Infra.CrossCutting.Messages;
+using SGA.UI.Site.Helpers;
 
 namespace SGA.UI.Site.Models
 {
@@ -11,21 +12,28 @@ namespace SGA.UI.Site.Models
     {
         [Key] public Guid Id { get; set; }
 
-        [Required(ErrorMessage = Message.MS_002)]
-        [MinLength(10)]
-        [MaxLength(100)]
+        [RequiredCustom("Descrição")]
+        [LengthValidation(10, 100, "Descrição")]
         [DisplayName("Descrição")]
         public string Description { get; set; }
 
-        [Required(ErrorMessage = Message.MS_002)]
-        [MinLength(2)]
-        [MaxLength(10)]
-        [DisplayName("Descrição")]
+        [RequiredCustom("Nome")]
+        [LengthValidation(2, 10, "Descrição")]
+        [DisplayName("Nome")]
         public string Name { get; set; }
 
-        [DisplayName("Tipo do Animal")] public SelectList TypeAnimalList { get; set; }
-
+        [DisplayName("Tipo do Animal")]
         [Required(ErrorMessage = Message.MS_002)]
-        public TypePet TypePet { get; set; }
+        public Guid TypePetId { get; set; }
+
+        public static implicit operator Pet(PetViewModel model)
+        {
+
+            if (model == null)
+                return null;
+
+            return new Pet(model.Id, model.Name,model.Description,model.TypePetId);
+        }
     }
+
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using SGA.Domain.Entities.Models;
 using SGA.Infra.CrossCutting.Messages;
 using SGA.UI.Site.Helpers;
 
@@ -10,20 +11,28 @@ namespace SGA.UI.Site.Models
     {
         [Key] public Guid Id { get; set; }
 
-        [Required(ErrorMessage = Message.MS_002)]
-        [MinLength(3)]
-        [MaxLength(50)]
+        [RequiredCustom("Nome")]
+        [LengthValidation(3, 50, "Nome")]
         [DisplayName("Nome")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = Message.MS_002)]
+        [RequiredCustom("E-mail")]
         [EmailAddress(ErrorMessage = Message.MS_007)]
         [DisplayName("E-mail")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = Message.MS_002)]
+        [RequiredCustom("Cpf")]
         [Cpf(Message.MS_007)]
         [DisplayName("CPF")]
         public string Cpf { get; set; }
+
+        public static implicit operator Responsible (ResponsibleViewModel model)
+        {
+
+            if (model == null)
+                return null;
+
+            return new Responsible(model.Id, model.Name, model.Cpf, model.Email);
+        }
     }
 }

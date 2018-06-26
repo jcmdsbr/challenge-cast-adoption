@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using SGA.Infra.CrossCutting.IoC;
 using SGA.UI.Site.Configurations;
 
@@ -20,8 +12,6 @@ namespace SGA.UI.Site
         {
 
             services.AddMvcWithCustomJson();
-
-            services.AddAutoMapper();
 
             services.AddResponseCaching();
 

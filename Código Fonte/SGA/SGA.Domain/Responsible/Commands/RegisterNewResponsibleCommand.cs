@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using SGA.Application.Domain.Responsible;
+using SGA.Application.Repository.Core;
 using SGA.Application.Repository.Responsible;
 using SGA.Domain.Core;
 using SGA.Domain.Responsible.Validations;
@@ -10,7 +11,8 @@ namespace SGA.Domain.Responsible.Commands
     {
         private readonly IResponsibleRepository _responsibleRepository;
 
-        public RegisterNewResponsibleCommand(IResponsibleRepository responsibleRepository)
+        public RegisterNewResponsibleCommand(IResponsibleRepository responsibleRepository, IUnitOfWork uow)
+            : base(uow)
         {
             _responsibleRepository = responsibleRepository;
         }
@@ -19,16 +21,17 @@ namespace SGA.Domain.Responsible.Commands
         {
             var validation = new RegisterNewResponsibleValidation().Validate(responsible);
 
-            if (validation.IsValid)
+            if (!validation.IsValid)
             {
-                responsible.CreateNewId();
-
-                _responsibleRepository.Add(responsible);
-
+                AddErros(validation.Errors.Select(x => x.ErrorMessage).ToList());
                 return;
             }
 
-            AddErros(validation.Errors.Select(x => x.ErrorMessage).ToList());
+            responsible.CreateNewId();
+
+            _responsibleRepository.Add(responsible);
+
+            Commit();
         }
     }
 }
