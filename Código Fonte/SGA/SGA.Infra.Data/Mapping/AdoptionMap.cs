@@ -10,12 +10,12 @@ namespace SGA.Infra.Repository.Mapping
         {
             builder.ToTable("adocao", "dbo");
 
-            builder.HasKey(c => new {c.ResponsibleId, c.AnimalId});
+            builder.HasKey(c => new {c.ResponsibleId, AnimalId = c.PetId});
 
-            builder.HasAlternateKey(c => c.AnimalId)
+            builder.HasAlternateKey(c => c.PetId)
                 .HasName("animal_unique");
 
-            builder.Property(f => f.AnimalId)
+            builder.Property(f => f.PetId)
                 .HasColumnName("cd_animal");
 
 
@@ -23,16 +23,19 @@ namespace SGA.Infra.Repository.Mapping
                 .HasColumnName("cd_responsavel");
 
             builder.Property(c => c.DateAdoption)
+                .HasColumnName("dt_adocao")
+                .HasColumnType("datetime")
                 .HasDefaultValueSql("GETDATE()");
+
 
             builder.HasOne(s => s.Responsible)
                 .WithMany()
                 .HasForeignKey(e => e.ResponsibleId)
                 .IsRequired();
 
-            builder.HasOne(s => s.Animal)
+            builder.HasOne(s => s.Pet)
                 .WithMany()
-                .HasForeignKey(e => e.AnimalId)
+                .HasForeignKey(e => e.PetId)
                 .IsRequired();
         }
     }

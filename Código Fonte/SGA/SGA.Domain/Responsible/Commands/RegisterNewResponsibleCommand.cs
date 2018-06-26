@@ -14,6 +14,7 @@ namespace SGA.Domain.Responsible.Commands
         {
             _responsibleRepository = responsibleRepository;
         }
+
         public override void Execute(Entities.Models.Responsible responsible)
         {
             var validation = new RegisterNewResponsibleValidation().Validate(responsible);
@@ -27,7 +28,7 @@ namespace SGA.Domain.Responsible.Commands
                 return;
             }
 
-            AddErros(validation.Errors.Select(x=>x.ErrorMessage).ToList());
+            AddErros(validation.Errors.Select(x => x.ErrorMessage).ToList());
         }
     }
 }

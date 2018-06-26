@@ -10,29 +10,29 @@ namespace SGA.Domain.Responsible.Validations
         protected void ValidateName()
         {
             RuleFor(c => c.Name)
-                .NotEmpty().WithMessage(string.Format(Message.MsRequired, "Nome"))
-                .Length(3, 50).WithMessage(string.Format(Message.MsRange, "Nome", 3, 50));
+                .NotEmpty().WithMessage(string.Format(Message.MS_002, "Nome"))
+                .Length(3, 50).WithMessage(string.Format(Message.MS_005, "Nome", 3, 50));
         }
 
         protected void ValidateEmail()
         {
             RuleFor(c => c.Email.Description)
-                .NotEmpty().WithMessage(string.Format(Message.MsRequired, "Email"))
-                .EmailAddress().WithMessage(Message.MsEmail);
+                .NotEmpty().WithMessage(string.Format(Message.MS_002, "Email"))
+                .EmailAddress().WithMessage(Message.MS_007);
         }
 
         protected void ValidateCpf()
         {
             RuleFor(c => c.Cpf.Value)
-                .NotEmpty().WithMessage(string.Format(Message.MsRequired, "Cpf"))
+                .NotEmpty().WithMessage(string.Format(Message.MS_002, "Cpf"))
                 .Must(IsValidCpf)
-                .WithMessage(Message.MsCpfInvalid);
+                .WithMessage(Message.MS_006);
         }
 
         protected void ValidateId()
         {
             RuleFor(c => c.Id)
-                .NotEqual(Guid.Empty).WithMessage(string.Format(Message.MsRequired, "Código"));
+                .NotEqual(Guid.Empty).WithMessage(string.Format(Message.MS_002, "Código"));
         }
 
         protected static bool IsValidCpf(string value)

@@ -1,8 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20180625230822_First.cs" />
+    <Compile Remove="Migrations\20180625231337_SGA -V1.cs" />
+    <Compile Remove="Migrations\20180625231511_SGA Migration.cs" />
+    <Compile Remove="Migrations\20180625231823_SGAMigration.cs" />
+    <Compile Remove="Migrations\20180626011046_SgaMigration.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.1.1" />

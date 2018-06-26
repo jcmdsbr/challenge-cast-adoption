@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using SGA.Application.Domain.Responsible;
 using SGA.Application.Repository.Adoption;
 using SGA.Domain.Adoption.Validations;
 using SGA.Domain.Core;
@@ -8,9 +7,9 @@ namespace SGA.Domain.Adoption.Commands
 {
     public class RegisterNewAdoptionCommand : Command<Entities.Models.Adoption>
     {
-        private readonly IAdotionRepository _adotionRepository;
+        private readonly IAdoptionRepository _adotionRepository;
 
-        public RegisterNewAdoptionCommand(IAdotionRepository adotionRepository)
+        public RegisterNewAdoptionCommand(IAdoptionRepository adotionRepository)
         {
             _adotionRepository = adotionRepository;
         }
@@ -25,8 +24,7 @@ namespace SGA.Domain.Adoption.Commands
                 return;
             }
 
-            AddErros(validation.Errors.Select(x=>x.ErrorMessage).ToList());
-           
+            AddErros(validation.Errors.Select(x => x.ErrorMessage).ToList());
         }
     }
 }

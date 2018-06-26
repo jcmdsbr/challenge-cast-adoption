@@ -1,0 +1,9 @@
+C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Infra.CrossCutting\bin\Debug\netcoreapp2.1\SGA.Infra.CrossCutting.deps.json
+C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Infra.CrossCutting\bin\Debug\netcoreapp2.1\SGA.Infra.CrossCutting.dll
+C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Infra.CrossCutting\bin\Debug\netcoreapp2.1\SGA.Infra.CrossCutting.pdb
+C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Infra.CrossCutting\obj\Debug\netcoreapp2.1\SGA.Infra.CrossCutting.csprojAssemblyReference.cache
+C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Infra.CrossCutting\obj\Debug\netcoreapp2.1\SGA.Infra.CrossCutting.csproj.CoreCompileInputs.cache
+C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Infra.CrossCutting\obj\Debug\netcoreapp2.1\SGA.Infra.CrossCutting.AssemblyInfoInputs.cache
+C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Infra.CrossCutting\obj\Debug\netcoreapp2.1\SGA.Infra.CrossCutting.AssemblyInfo.cs
+C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Infra.CrossCutting\obj\Debug\netcoreapp2.1\SGA.Infra.CrossCutting.dll
+C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Infra.CrossCutting\obj\Debug\netcoreapp2.1\SGA.Infra.CrossCutting.pdb

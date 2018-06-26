@@ -16,6 +16,7 @@ namespace SGA.Infra.Repository.Mapping
                 .HasColumnName("cd_responsavel");
 
             builder.Property(c => c.Name)
+                .HasColumnName("nm_responsavel")
                 .HasColumnType("varchar(50)")
                 .HasMaxLength(50)
                 .IsRequired();
@@ -34,6 +35,7 @@ namespace SGA.Infra.Repository.Mapping
             {
                 cb.Property(c => c.Value)
                     .HasColumnName("cpf_responsavel")
+                    .HasColumnType("varchar(11)")
                     .IsRequired();
             });
         }

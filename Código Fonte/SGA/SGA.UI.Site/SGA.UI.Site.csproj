@@ -5,15 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.0-preview2-final" />
+    <PackageReference Include="AutoMapper" Version="7.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="4.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SGA.Application\SGA.Application.csproj" />
+    <ProjectReference Include="..\SGA.Infra.CrossCutting.IoC\SGA.Infra.CrossCutting.IoC.csproj" />
     <ProjectReference Include="..\SGA.Infra.CrossCutting\SGA.Infra.CrossCutting.csproj" />
   </ItemGroup>
 

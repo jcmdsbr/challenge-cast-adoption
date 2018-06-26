@@ -18,6 +18,8 @@ namespace SGA.Domain.Core
             return _errors;
         }
 
+        public abstract void Execute(T entity);
+
         protected void AddError(string error)
         {
             _errors.Add(error);
@@ -25,9 +27,7 @@ namespace SGA.Domain.Core
 
         protected void AddErros(List<string> errors)
         {
-             _errors.AddRange(errors);
+            _errors.AddRange(errors);
         }
-
-        public abstract void Execute(T entity);
     }
 }

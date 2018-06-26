@@ -13,8 +13,8 @@ namespace SGA.Infra.Repository.Context
             Database.EnsureCreated(); // create a db -f
         }
 
-        public DbSet<Animal> Animals { get; set; }
-        public DbSet<TypeAnimal> TypeAnimals { get; set; }
+        public DbSet<Pet> Animals { get; set; }
+        public DbSet<TypePet> TypeAnimals { get; set; }
         public DbSet<Responsible> Responsibles { get; set; }
         public DbSet<Adoption> Adoptions { get; set; }
 
@@ -31,8 +31,8 @@ namespace SGA.Infra.Repository.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new TypeAnimalMap());
-            modelBuilder.ApplyConfiguration(new AnimalMap());
+            modelBuilder.ApplyConfiguration(new TypePetMap());
+            modelBuilder.ApplyConfiguration(new PetMap());
             modelBuilder.ApplyConfiguration(new ResponsibleMap());
             modelBuilder.ApplyConfiguration(new AdoptionMap());
 

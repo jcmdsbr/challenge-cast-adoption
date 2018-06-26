@@ -5,21 +5,21 @@ namespace SGA.Domain.Entities.Models
 {
     public class Adoption 
     {
-        public Adoption(Animal animal, Responsible responsible, DateTime dateAdoption)
+        public Adoption(Pet pet, Responsible responsible, DateTime dateAdoption)
         {
-            Animal = animal;
+            Pet = pet;
             Responsible = responsible;
             DateAdoption = dateAdoption;
-            AnimalId = animal.Id;
+            PetId = pet.Id;
             ResponsibleId = responsible.Id;
         }
 
         protected Adoption() {  }
 
-        public Guid AnimalId { get; private set; }
+        public Guid PetId { get; private set; }
 
         public Guid ResponsibleId { get; private set; }
-        public  Animal Animal { get; private set; }
+        public  Pet Pet { get; private set; }
         public  Responsible Responsible { get; private set; }
         public DateTime DateAdoption { get; private set; }
 
@@ -30,17 +30,17 @@ namespace SGA.Domain.Entities.Models
             if (ReferenceEquals(this, compareTo)) return true;
             if (ReferenceEquals(null, compareTo)) return false;
 
-            return AnimalId.Equals(compareTo.AnimalId) && ResponsibleId.Equals(compareTo.ResponsibleId);
+            return PetId.Equals(compareTo.PetId) && ResponsibleId.Equals(compareTo.ResponsibleId);
         }
 
         public override int GetHashCode()
         {
-            return GetType().GetHashCode() * 907 + AnimalId.GetHashCode() + ResponsibleId.GetHashCode();
+            return GetType().GetHashCode() * 907 + PetId.GetHashCode() + ResponsibleId.GetHashCode();
         }
 
         public override string ToString()
         {
-            return GetType().Name + " [Id=" + AnimalId.GetHashCode() + ResponsibleId.GetHashCode() + "]";
+            return GetType().Name + " [Id=" + PetId.GetHashCode() + ResponsibleId.GetHashCode() + "]";
         }
 
     }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using SGA.Application.Domain.Core;
 using SGA.Application.Repository.Core;
 using SGA.Infra.Repository.Context;
 
@@ -12,7 +13,7 @@ namespace SGA.Infra.Repository.Repository
         protected readonly SgaContext Db;
         protected readonly DbSet<TEntity> DbSet;
 
-        public BaseRepository(SgaContext db)
+        protected BaseRepository(SgaContext db)
         {
             Db = db;
             DbSet = Db.Set<TEntity>();

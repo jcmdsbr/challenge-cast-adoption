@@ -2,9 +2,11 @@
 {
     public static class Message
     {
-        public static string MsRequired { get; set; }
-        public static string MsRange { get; set; }
-        public static string MsCpfInvalid { get; set; }
-        public static string MsEmail { get; set; }
+        public const string MS_001 = "Cadastro realizado com sucesso.";
+        public const string MS_002 = "O campo “{0}” é obrigatório.";
+        public const string MS_003 = "Sistema Indisponível.";
+        public const string MS_005 = "O campo “{0}” deve conter  no minimo {1} e no máximo {2} caracteres.";
+        public const string MS_006 = "O Campo Cpf está inválido.";
+        public const string MS_007 = "O Campo E-mail está inválido.";
     }
 }

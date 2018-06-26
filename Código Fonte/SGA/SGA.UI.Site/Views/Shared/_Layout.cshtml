@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>CQRS - Project </title>
+    <link rel="stylesheet" href="~/lib/css/site.min.css" />
+    <link href="~/lib/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="~/lib/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+    <link href="~/lib/css/freelancer.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+        <div class="container">
+            <a asp-controller="Home" asp-action="Index" class="navbar-brand js-scroll-trigger">Home</a>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Cadastrar
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" asp-controller="Pet">Animal</a>
+                            <a class="dropdown-item" asp-controller="Responsible">Responsável</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="dropdown-item" asp-controller="Adoption">Adoção</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br />
+
+    <section class="portfolio bg-primary">
+        <div class="container"> @RenderBody() </div>
+    </section>
+
+    <script src="~/lib/js/site.min.js"></script>
+    <script src="~/lib/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="~/lib/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="~/lib/js/validate.min.js"></script>
+
+    @{
+
+        if (!string.IsNullOrEmpty(TempData["ErrorNotifications"] as string))
+        {
+            <script type="text/javascript">
+            toastr.options.closeButton = true;
+            toastr.options.positionClass = "toast-bottom-right";
+            toastr.error("@Html.Raw(TempData["ErrorNotifications"])");
+            </script>
+        }
+
+        if (!string.IsNullOrEmpty(TempData["Success"] as string))
+        {
+            <script type="text/javascript">
+            toastr.options.closeButton = true;
+            toastr.options.positionClass = "toast-top-full-width";
+            toastr.success("@Html.Raw(TempData["Success"])");
+            </script>
+        }
+    }
+
+    @RenderSection("scripts", false)
+
+</body>
+
+</html>
