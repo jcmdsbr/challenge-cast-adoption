@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="7.6.103" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SGA.Application\SGA.Application.csproj" />
+    <ProjectReference Include="..\SGA.Domain.Entities\SGA.Domain.Entities.csproj" />
+    <ProjectReference Include="..\SGA.Infra.CrossCutting\SGA.Infra.CrossCutting.csproj" />
+  </ItemGroup>
+
+</Project>

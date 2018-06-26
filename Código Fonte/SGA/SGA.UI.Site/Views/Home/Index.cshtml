@@ -1,0 +1,32 @@
+﻿@model IEnumerable<SGA.Domain.Entities.Models.Pet>
+
+
+<div class="alert alert-warning" role="alert">
+    Animais que ainda não foram adotados
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nome do Animal
+            </th>
+            <th>
+                Tipo do Animal
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TypePet.Description)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
