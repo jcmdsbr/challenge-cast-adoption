@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskName": "task-node_modules",
+      "appliesTo": "Código Fonte/SGA/SGA.UI.Site/node_modules/",
+      "type": "launch"
+    }
+  ]
+}

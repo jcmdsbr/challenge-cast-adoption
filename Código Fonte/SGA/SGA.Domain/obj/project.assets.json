@@ -2140,23 +2140,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jean Carlos\\.nuget\\packages\\": {},
+    "C:\\Users\\jean.moreira\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projetos\\Git\\DesafioCast\\Código Fonte\\SGA\\SGA.Domain\\SGA.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\jean.moreira\\Desktop\\Arquivos Pessoais\\Estudos\\C#\\DesafioCast\\Código Fonte\\SGA\\SGA.Domain\\SGA.Domain.csproj",
       "projectName": "SGA.Domain",
-      "projectPath": "C:\\Projetos\\Git\\DesafioCast\\Código Fonte\\SGA\\SGA.Domain\\SGA.Domain.csproj",
-      "packagesPath": "C:\\Users\\Jean Carlos\\.nuget\\packages\\",
-      "outputPath": "C:\\Projetos\\Git\\DesafioCast\\Código Fonte\\SGA\\SGA.Domain\\obj\\",
+      "projectPath": "C:\\Users\\jean.moreira\\Desktop\\Arquivos Pessoais\\Estudos\\C#\\DesafioCast\\Código Fonte\\SGA\\SGA.Domain\\SGA.Domain.csproj",
+      "packagesPath": "C:\\Users\\jean.moreira\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jean.moreira\\Desktop\\Arquivos Pessoais\\Estudos\\C#\\DesafioCast\\Código Fonte\\SGA\\SGA.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Jean Carlos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jean.moreira\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2164,19 +2164,20 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "http://arasrvvirist001:8050/Cast.Nuget/nuget": {},
+        "https://www.nuget.org/api/v2/": {}
       },
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Projetos\\Git\\DesafioCast\\Código Fonte\\SGA\\SGA.Application\\SGA.Application.csproj": {
-              "projectPath": "C:\\Projetos\\Git\\DesafioCast\\Código Fonte\\SGA\\SGA.Application\\SGA.Application.csproj"
+            "C:\\Users\\jean.moreira\\Desktop\\Arquivos Pessoais\\Estudos\\C#\\DesafioCast\\Código Fonte\\SGA\\SGA.Application\\SGA.Application.csproj": {
+              "projectPath": "C:\\Users\\jean.moreira\\Desktop\\Arquivos Pessoais\\Estudos\\C#\\DesafioCast\\Código Fonte\\SGA\\SGA.Application\\SGA.Application.csproj"
             },
-            "C:\\Projetos\\Git\\DesafioCast\\Código Fonte\\SGA\\SGA.Domain.Entities\\SGA.Domain.Entities.csproj": {
-              "projectPath": "C:\\Projetos\\Git\\DesafioCast\\Código Fonte\\SGA\\SGA.Domain.Entities\\SGA.Domain.Entities.csproj"
+            "C:\\Users\\jean.moreira\\Desktop\\Arquivos Pessoais\\Estudos\\C#\\DesafioCast\\Código Fonte\\SGA\\SGA.Domain.Entities\\SGA.Domain.Entities.csproj": {
+              "projectPath": "C:\\Users\\jean.moreira\\Desktop\\Arquivos Pessoais\\Estudos\\C#\\DesafioCast\\Código Fonte\\SGA\\SGA.Domain.Entities\\SGA.Domain.Entities.csproj"
             },
-            "C:\\Projetos\\Git\\DesafioCast\\Código Fonte\\SGA\\SGA.Infra.CrossCutting\\SGA.Infra.CrossCutting.csproj": {
-              "projectPath": "C:\\Projetos\\Git\\DesafioCast\\Código Fonte\\SGA\\SGA.Infra.CrossCutting\\SGA.Infra.CrossCutting.csproj"
+            "C:\\Users\\jean.moreira\\Desktop\\Arquivos Pessoais\\Estudos\\C#\\DesafioCast\\Código Fonte\\SGA\\SGA.Infra.CrossCutting\\SGA.Infra.CrossCutting.csproj": {
+              "projectPath": "C:\\Users\\jean.moreira\\Desktop\\Arquivos Pessoais\\Estudos\\C#\\DesafioCast\\Código Fonte\\SGA\\SGA.Infra.CrossCutting\\SGA.Infra.CrossCutting.csproj"
             }
           }
         }

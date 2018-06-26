@@ -16,3 +16,21 @@ C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Infra.Data\obj\Debug\netcoreap
 C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Infra.Data\obj\Debug\netcoreapp2.1\SGA.Infra.Repository.csproj.CopyComplete
 C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Infra.Data\obj\Debug\netcoreapp2.1\SGA.Infra.Repository.dll
 C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Infra.Data\obj\Debug\netcoreapp2.1\SGA.Infra.Repository.pdb
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Infra.Data\bin\Debug\netcoreapp2.1\SGA.Infra.Repository.deps.json
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Infra.Data\bin\Debug\netcoreapp2.1\SGA.Infra.Repository.runtimeconfig.json
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Infra.Data\bin\Debug\netcoreapp2.1\SGA.Infra.Repository.runtimeconfig.dev.json
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Infra.Data\bin\Debug\netcoreapp2.1\SGA.Infra.Repository.dll
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Infra.Data\bin\Debug\netcoreapp2.1\SGA.Infra.Repository.pdb
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Infra.Data\bin\Debug\netcoreapp2.1\SGA.Application.dll
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Infra.Data\bin\Debug\netcoreapp2.1\SGA.Domain.Entities.dll
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Infra.Data\bin\Debug\netcoreapp2.1\SGA.Infra.CrossCutting.dll
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Infra.Data\bin\Debug\netcoreapp2.1\SGA.Application.pdb
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Infra.Data\bin\Debug\netcoreapp2.1\SGA.Domain.Entities.pdb
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Infra.Data\bin\Debug\netcoreapp2.1\SGA.Infra.CrossCutting.pdb
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Infra.Data\obj\Debug\netcoreapp2.1\SGA.Infra.Repository.csprojAssemblyReference.cache
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Infra.Data\obj\Debug\netcoreapp2.1\SGA.Infra.Repository.csproj.CoreCompileInputs.cache
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Infra.Data\obj\Debug\netcoreapp2.1\SGA.Infra.Repository.AssemblyInfoInputs.cache
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Infra.Data\obj\Debug\netcoreapp2.1\SGA.Infra.Repository.AssemblyInfo.cs
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Infra.Data\obj\Debug\netcoreapp2.1\SGA.Infra.Repository.csproj.CopyComplete
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Infra.Data\obj\Debug\netcoreapp2.1\SGA.Infra.Repository.dll
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Infra.Data\obj\Debug\netcoreapp2.1\SGA.Infra.Repository.pdb

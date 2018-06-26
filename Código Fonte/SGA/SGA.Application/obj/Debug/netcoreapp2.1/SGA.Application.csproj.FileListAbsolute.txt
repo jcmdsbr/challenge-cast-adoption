@@ -12,3 +12,17 @@ C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Application\obj\Debug\netcorea
 C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Application\obj\Debug\netcoreapp2.1\SGA.Application.csproj.CopyComplete
 C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Application\obj\Debug\netcoreapp2.1\SGA.Application.dll
 C:\Projetos\Git\DesafioCast\Código Fonte\SGA\SGA.Application\obj\Debug\netcoreapp2.1\SGA.Application.pdb
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Application\bin\Debug\netcoreapp2.1\SGA.Application.deps.json
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Application\bin\Debug\netcoreapp2.1\SGA.Application.dll
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Application\bin\Debug\netcoreapp2.1\SGA.Application.pdb
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Application\bin\Debug\netcoreapp2.1\SGA.Domain.Entities.dll
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Application\bin\Debug\netcoreapp2.1\SGA.Infra.CrossCutting.dll
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Application\bin\Debug\netcoreapp2.1\SGA.Domain.Entities.pdb
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Application\bin\Debug\netcoreapp2.1\SGA.Infra.CrossCutting.pdb
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Application\obj\Debug\netcoreapp2.1\SGA.Application.csprojAssemblyReference.cache
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Application\obj\Debug\netcoreapp2.1\SGA.Application.csproj.CoreCompileInputs.cache
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Application\obj\Debug\netcoreapp2.1\SGA.Application.AssemblyInfoInputs.cache
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Application\obj\Debug\netcoreapp2.1\SGA.Application.AssemblyInfo.cs
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Application\obj\Debug\netcoreapp2.1\SGA.Application.csproj.CopyComplete
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Application\obj\Debug\netcoreapp2.1\SGA.Application.dll
+C:\Users\jean.moreira\Desktop\Arquivos Pessoais\Estudos\C#\DesafioCast\Código Fonte\SGA\SGA.Application\obj\Debug\netcoreapp2.1\SGA.Application.pdb
