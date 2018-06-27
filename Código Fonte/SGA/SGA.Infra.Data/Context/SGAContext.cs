@@ -1,6 +1,4 @@
-﻿using System.IO;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.EntityFrameworkCore;
 using SGA.Domain.Entities.Models;
 using SGA.Infra.Repository.Mapping;
 
@@ -8,26 +6,15 @@ namespace SGA.Infra.Repository.Context
 {
     public sealed class SgaContext : DbContext
     {
-        public SgaContext()
+        public SgaContext(DbContextOptions<SgaContext> options) : base(options)
         {
-            Database.EnsureCreated(); // create a db -f
+            //Database.EnsureCreated();
         }
 
         public DbSet<Pet> Animals { get; set; }
         public DbSet<TypePet> TypeAnimals { get; set; }
         public DbSet<Responsible> Responsibles { get; set; }
         public DbSet<Adoption> Adoptions { get; set; }
-
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            var config = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json")
-                .Build();
-
-            optionsBuilder.UseSqlServer(config.GetConnectionString("DefaultConnection"));
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

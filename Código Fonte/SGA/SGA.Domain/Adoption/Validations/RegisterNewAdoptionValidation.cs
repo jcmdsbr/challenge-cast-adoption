@@ -1,22 +1,18 @@
-﻿using System.Collections.Generic;
-using FluentValidation.Results;
-using SGA.Domain.Pet.Validations;
-using SGA.Domain.Responsible.Validations;
+﻿using FluentValidation.Results;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SGA.Domain.Adoption.Validations
 {
     public class RegisterNewAdoptionValidation
     {
-        public ValidationResult Validate(Entities.Models.Adoption adoption)
+        public static ValidationResult Validate(Entities.Models.Adoption adoption)
         {
-            var resposibleValidation = new RegisterNewResponsibleValidation().Validate(adoption.Responsible);
-            var petValidation = new RegisterNewPetValidation().Validate(adoption.Pet);
-            var failures = new List<ValidationFailure>();
+            if (!adoption.GetAdoptions().Any())
+                return new ValidationResult(new List<ValidationFailure> { new ValidationFailure("GetAdoptions", Infra.CrossCutting.Messages.Message.MS_008) });
 
-            failures.AddRange(resposibleValidation.Errors);
-            failures.AddRange(petValidation.Errors);
 
-            return new ValidationResult(failures);
+            return new ValidationResult();
         }
     }
 }

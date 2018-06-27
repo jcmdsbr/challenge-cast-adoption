@@ -1,9 +1,9 @@
-﻿using System.Linq;
-using SGA.Application.Domain.Adoption;
+﻿using SGA.Application.Domain.Adoption;
 using SGA.Application.Repository.Adoption;
 using SGA.Application.Repository.Core;
 using SGA.Domain.Adoption.Validations;
 using SGA.Domain.Core;
+using System.Linq;
 
 namespace SGA.Domain.Adoption.Commands
 {
@@ -11,22 +11,25 @@ namespace SGA.Domain.Adoption.Commands
     {
         private readonly IAdoptionRepository _adotionRepository;
 
-        public RegisterNewAdoptionCommand(IAdoptionRepository adotionRepository, IUnitOfWork uow): base(uow)
+        public RegisterNewAdoptionCommand(IAdoptionRepository adotionRepository, IUnitOfWork uow) : base(uow)
         {
             _adotionRepository = adotionRepository;
-        } 
+        }
 
         public override void Execute(Entities.Models.Adoption adoption)
         {
-            var validation = new RegisterNewAdoptionValidation().Validate(adoption);
+            var validation = RegisterNewAdoptionValidation.Validate(adoption);
 
-            if (validation.IsValid)
+            if (!validation.IsValid)
             {
-                _adotionRepository.Add(adoption);
+                AddErros(validation.Errors.Select(x => x.ErrorMessage).ToList());
                 return;
             }
 
-            AddErros(validation.Errors.Select(x => x.ErrorMessage).ToList());
+            _adotionRepository.AddRange(adoption.GetAdoptions());
+
+            Commit();
+
         }
     }
 }

@@ -9,6 +9,18 @@ namespace SGA.UI.Site.Models
 {
     public class ResponsibleViewModel
     {
+        public ResponsibleViewModel()
+        {
+
+        }
+        public ResponsibleViewModel(Guid id, string name, string email,string cpf)
+        {
+            Id = id;
+            Name = name;
+            Email = email;
+            Cpf = cpf;
+            
+        }
         [Key] public Guid Id { get; set; }
 
         [RequiredCustom("Nome")]
@@ -34,5 +46,16 @@ namespace SGA.UI.Site.Models
 
             return new Responsible(model.Id, model.Name, model.Cpf, model.Email);
         }
+
+
+        public static explicit operator ResponsibleViewModel(Responsible model)
+        {
+
+            if (model == null)
+                return null;
+
+            return new ResponsibleViewModel(model.Id, model.Name, model.Email.ToString(), model.Cpf.Format);
+        }
+
     }
 }

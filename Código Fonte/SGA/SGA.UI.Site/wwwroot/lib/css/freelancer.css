@@ -311,7 +311,7 @@ form .row:first-child .floating-label-form-group { border-top: 1px solid black; 
 .copyright { background-color: #1a252f; }
 
 a {
-    color: white
+    color: mediumaquamarine
     !important;
 }
 
@@ -319,7 +319,10 @@ a {
         color: white;
     }
 
- 
+.white-color {
+    color: whitesmoke !important;
+} 
+
 .black-color {
     color:black !important;
 } 

@@ -6,7 +6,7 @@ using SGA.UI.Site.Models;
 
 namespace SGA.UI.Site.Controllers
 {
-    public class ResponsibleController : Controller
+    public class ResponsibleController : BaseController
     {
         private readonly IRegisterNewResponsibleCommand _command;
 

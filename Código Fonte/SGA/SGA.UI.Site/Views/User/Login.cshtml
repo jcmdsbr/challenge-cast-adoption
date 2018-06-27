@@ -1,0 +1,56 @@
+﻿@model SGA.UI.Site.Models.UserViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>CQRS - Project </title>
+    <link rel="stylesheet" href="~/lib/css/site.min.css" />
+    <link href="~/lib/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="~/lib/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+    <link href="~/lib/css/freelancer.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="jumbotron">
+        <h1 class="display-4">Bem vindo ao Sistema de Gerenciamento de Adoções</h1>
+        <hr />
+        <div class="text-center">
+            <form class="form-signin" asp-controller="User" asp-action="Login" asp-antiforgery="true">
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <img class="img-fluid mb-5 d-block mx-auto" src="~/lib/img/profile.png" alt="">
+                    </div>
+                    <div class="card-body">
+                        <input type="text" class="form-control" placeholder="Nome de usuário" autofocus asp-for="Username" />
+                        <input type="password" id="inputPassword" class="form-control" placeholder="Senha" asp-for="Password" />
+
+                    </div>
+                    <div class="card-body">
+                        <button class="btn btn-lg btn-outline-dark btn-block" type="submit">
+                            Entrar
+                        </button>
+                    </div>
+                    <div class="card-footer bg-light">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</body>
+</html>

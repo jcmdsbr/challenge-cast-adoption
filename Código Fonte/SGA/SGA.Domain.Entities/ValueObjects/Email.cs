@@ -16,6 +16,11 @@ namespace SGA.Domain.Entities.ValueObjects
             Description = value;
         }
 
+        public override string ToString()
+        {
+            return Description;
+        }
+
         public string Description { get; private set; }
 
         protected override bool EqualsCore(Email other)

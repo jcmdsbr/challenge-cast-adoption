@@ -15,9 +15,19 @@ namespace SGA.Infra.Repository.Repository
         {
         }
 
+        public void AddRange(List<Adoption> adoptions)
+        {
+            DbSet.AddRange(adoptions);
+        }
+
+        public AdoptionDto FindReponsableAndTheirAdoptionsBy(Func<Responsible, bool> func)
+        {
+            return Db.Set<Responsible>().Where(func).Select(x => new AdoptionDto(x, DbSet.Count(a => a.ResponsibleId == x.Id))).Single();
+        }
+
         public IEnumerable<AdoptionDto> GetReponsablesAndTheirAdoptions()
         {
-            return Db.Set<Responsible>().Select(x => new AdoptionDto(x, DbSet.Count(a=>a.ResponsibleId == x.Id)));
+            return Db.Set<Responsible>().Select(x => new AdoptionDto(x, DbSet.Count(a => a.ResponsibleId == x.Id)));
         }
     }
 }

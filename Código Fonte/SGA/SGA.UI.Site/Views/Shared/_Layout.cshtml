@@ -21,11 +21,11 @@
 
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
         <div class="container">
-            <a asp-controller="Home" asp-action="Index" class="navbar-brandr">Home</a>
+            <a asp-controller="Home" asp-action="Index" class="navbar-brandr white-color">Home</a>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="dropdown">
-                        <a class="btn btn-primary dropdown-toggle"   id="dropdownCadastrar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="btn btn-primary dropdown-toggle white-color" id="dropdownCadastrar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Cadastrar
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownCadastrar">
@@ -35,7 +35,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="btn btn-primary"  asp-controller="Adoption">Adoção</a>
+                        <a class="btn btn-primary white-color" asp-controller="Adoption">Adoção</a>
                     </li>
                 </ul>
             </div>
@@ -72,6 +72,10 @@
             toastr.success("@Html.Raw(TempData["Success"])");
             </script>
         }
+
+        <script type="text/javascript">
+            $('.cpf').mask('000.000.000-00', { reverse: true });
+        </script>
     }
 
     @RenderSection("scripts", false)

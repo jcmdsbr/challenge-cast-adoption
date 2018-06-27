@@ -4,11 +4,6 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -28,21 +23,22 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Responsible.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Responsible.Cpf.Format)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AdoptedPets)
-            </td>
-            <td>
-                <a class="btn btn-dark" asp-action="Adoption" asp-route-id="@item.Responsible.Id">Realizar adoção</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Responsible.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Responsible.Cpf.Format)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdoptedPets)
+                </td>
+                <td>
+                    <a class="btn btn-dark white-color" asp-action="ToAdopt" asp-route-id="@item.Responsible.Id">Realizar adoção</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

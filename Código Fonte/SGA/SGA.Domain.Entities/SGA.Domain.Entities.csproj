@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SGA.Infra.CrossCutting\SGA.Infra.CrossCutting.csproj" />
+  </ItemGroup>
+
 </Project>

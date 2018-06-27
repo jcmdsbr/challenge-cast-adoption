@@ -1,0 +1,65 @@
+﻿@model SGA.UI.Site.Models.AdoptionViewModel
+
+@{
+    ViewData["Title"] = "Adoption";
+}
+
+<h2>Executando Adoção</h2>
+<div class="jumbotron">
+    <form id="ToAdoptForm" asp-action="ToAdopt" asp-controller="Adoption" method="post">
+        <div class="form-group">
+            @Html.HiddenFor(x => x.Responsible.Id)
+            @Html.HiddenFor(x => x.PetsJson)
+            <h5>
+                Responsável : @Html.DisplayFor(model => model.Responsible.Name)
+                <span data-toggle="tooltip" data-placement="top" title="Quantidade de Animais Adotados" class="badge badge-primary badge-pill">
+                    @Html.DisplayFor(model => model.AdoptedPets)
+                </span>
+            </h5>
+            <hr />
+            <div class="alert alert-secondary" role="alert">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Responsible.Email)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Responsible.Email)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Responsible.Cpf)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Responsible.Cpf)
+                    </dd>
+
+                </dl>
+            </div>
+            <div class="form-group">
+                <div class="alert alert-info" role="alert">
+                    <label for="pets">Selecione quais Animais deseja adotar.</label>
+                </div>
+                <select multiple class="form-control" id="pets" asp-items="ViewBag.Pets"></select>
+            </div>
+            <div class="form-group">
+                <input type="button" id="btnSalvar" value="Salvar" class="btn btn-default" />
+                <button class="btn btn-default" asp-controller="Home" asp-action="Index">Voltar</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+
+
+            var save = () => {
+                $("#PetsJson").val(JSON.stringify($("#pets").val()));
+                $("#ToAdoptForm").submit();
+            };
+
+            $("#btnSalvar").click(() => { save() });
+
+        });
+    </script>
+}

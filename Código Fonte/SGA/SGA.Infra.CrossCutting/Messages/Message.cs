@@ -8,5 +8,7 @@
         public const string MS_005 = "O campo “{0}” deve conter  no minimo {1} e no máximo {2} caracteres.";
         public const string MS_006 = "O Campo Cpf está inválido.";
         public const string MS_007 = "O Campo E-mail está inválido.";
+
+        public const string MS_008 = "Selecione ao menos um animal para adoção.";
     }
 }
