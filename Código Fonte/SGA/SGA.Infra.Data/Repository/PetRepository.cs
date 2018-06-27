@@ -14,7 +14,7 @@ namespace SGA.Infra.Repository.Repository
         {
         }
 
-        public ICollection<TypePet> GetTypeAnimals()
+        public ICollection<TypePet> GetTypePets()
         {
             return Db.Set<TypePet>().AsNoTracking().ToList();
         }

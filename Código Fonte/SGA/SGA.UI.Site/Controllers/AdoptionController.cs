@@ -29,7 +29,16 @@ namespace SGA.UI.Site.Controllers
         [HttpGet]
         public IActionResult ToAdopt(Guid id) => SafeResult(() =>
         {
-            ViewBag.Pets = _petQuery.GetPetsNotAdopted().Select(PopularItens());
+            var petsNotAdopted = _petQuery.GetPetsNotAdopted();
+
+            if (!petsNotAdopted.Any())
+            {
+                NotifyError(Message.MS_004);
+
+                return RedirectToAction(nameof(ToAdopt), "Home");
+            }
+
+            ViewBag.Pets = petsNotAdopted.Select(x => new SelectListItem { Value = x.Id.ToString(), Text = x.Name });
 
             return View((AdoptionViewModel)_adoptionQuery.FindReponsableAndTheirAdoptionsBy(x => x.Id == id));
         });
@@ -42,23 +51,25 @@ namespace SGA.UI.Site.Controllers
             {
                 if (!model.Pets.Any())
                 {
-                    TempData["ErrorNotifications"] = Message.MS_008;
+                    NotifyError(Message.MS_008);
+
                     return RedirectToAction(nameof(ToAdopt), model.Responsible.Id);
                 }
                 _command.Execute(model);
 
                 if (!_command.HasErrors())
                 {
-                    TempData["Success"] = Message.MS_001;
+                    NotifySucess();
+
                     return RedirectToAction(nameof(Index), "Home");
                 }
 
-                TempData["ErrorNotifications"] = string.Join(",", _command.GetErrors());
+                NotifyError(string.Join(",", _command.GetErrors()));
+
                 return RedirectToAction(nameof(ToAdopt), model.Responsible.Id);
             });
         }
 
-        private static Func<Domain.Entities.Models.Pet, SelectListItem> PopularItens() => x => new SelectListItem { Value = x.Id.ToString(), Text = x.Name };
     }
 
 }

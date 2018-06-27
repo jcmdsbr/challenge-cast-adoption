@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@inject UserManager<ApplicationUser> UserManager
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -21,7 +22,7 @@
 
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
         <div class="container">
-            <a asp-controller="Home" asp-action="Index" class="navbar-brandr white-color">Home</a>
+            <a asp-controller="Home" asp-action="Index" class="white-color" title="Home">Bem vindo @UserManager.GetUserName(User)!</a>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="dropdown">
@@ -36,6 +37,10 @@
 
                     <li class="nav-item">
                         <a class="btn btn-primary white-color" asp-controller="Adoption">Adoção</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link white-color" asp-controller="User" asp-action="Logout">Sair <i class="fas fa-sign-out-alt"></i></a>
                     </li>
                 </ul>
             </div>

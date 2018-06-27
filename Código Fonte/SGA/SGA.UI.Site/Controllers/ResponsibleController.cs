@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SGA.Application.Domain.Responsible;
-using SGA.Domain.Entities.Models;
-using SGA.Infra.CrossCutting.Messages;
 using SGA.UI.Site.Models;
 
 namespace SGA.UI.Site.Controllers
@@ -34,11 +32,12 @@ namespace SGA.UI.Site.Controllers
 
             if (!_command.HasErrors())
             {
-                TempData["Success"] = Message.MS_001;
+                NotifySucess();
+
                 return RedirectToAction(nameof(Index), "Home");
             }
 
-            TempData["ErrorNotifications"] = string.Join(",", _command.GetErrors());
+            NotifyError(string.Join(",", _command.GetErrors()));
 
             return View(model);
 

@@ -1,10 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using SGA.Application.Domain.Pet;
-using SGA.Domain.Entities.Models;
-using SGA.Infra.CrossCutting.Messages;
 using SGA.UI.Site.Models;
-using System;
 using System.Linq;
 
 namespace SGA.UI.Site.Controllers
@@ -25,7 +22,7 @@ namespace SGA.UI.Site.Controllers
         {
             return SafeResult(() =>
             {
-                ViewBag.TypePetId = _petQuery.GetTypeAnimals().Select(PopularItens());
+                LoadTypePets();
 
                 return View(new PetViewModel());
             });
@@ -40,7 +37,8 @@ namespace SGA.UI.Site.Controllers
             {
                 if (!ModelState.IsValid)
                 {
-                    ViewBag.TypePetId = _petQuery.GetTypeAnimals().Select(PopularItens());
+                    LoadTypePets();
+
                     return View(model);
                 }
 
@@ -48,18 +46,22 @@ namespace SGA.UI.Site.Controllers
 
                 if (!_command.HasErrors())
                 {
-                    TempData["Success"] = Message.MS_001;
+                    NotifySucess();
+
                     return RedirectToAction(nameof(Index), "Home");
                 }
 
-                ViewBag.TypePetId = _petQuery.GetTypeAnimals().Select(PopularItens());
-                TempData["ErrorNotifications"] = string.Join(",", _command.GetErrors());
+                LoadTypePets();
+
+                NotifyError(string.Join(",", _command.GetErrors()));
 
                 return View(model);
             });
 
         }
-
-        private static Func<TypePet, SelectListItem> PopularItens() => x => new SelectListItem { Value = x.Id.ToString(), Text = x.Description };
+        private void LoadTypePets()
+        {
+            ViewBag.TypePetId = _petQuery.GetTypePets().Select(x => new SelectListItem { Value = x.Id.ToString(), Text = x.Description });
+        }
     }
 }

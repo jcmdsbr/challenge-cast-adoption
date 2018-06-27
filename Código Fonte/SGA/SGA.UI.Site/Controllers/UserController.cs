@@ -28,6 +28,7 @@ namespace SGA.UI.Site.Controllers
         [HttpPost, AllowAnonymous, ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(UserViewModel model)
         {
+
             if (!ModelState.IsValid)
                 return View(model);
 
@@ -43,6 +44,7 @@ namespace SGA.UI.Site.Controllers
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
+
             return RedirectToAction("Index", "Home");
         }
     }

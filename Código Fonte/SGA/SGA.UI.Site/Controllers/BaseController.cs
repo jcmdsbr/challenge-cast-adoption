@@ -17,10 +17,21 @@ namespace SGA.UI.Site.Controllers
             catch (Exception)
             {
 
-                TempData["ErrorNotifications"] = Message.MS_003;
+                NotifyError(Message.MS_003);
 
                 return NotFound();
             }
+        }
+
+
+        protected void NotifyError(string message)
+        {
+            TempData["ErrorNotifications"] = message;
+        }
+
+        protected void NotifySucess()
+        {
+            TempData["Success"] = Message.MS_001;
         }
     }
 }

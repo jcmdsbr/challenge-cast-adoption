@@ -6,7 +6,7 @@ namespace SGA.Application.Domain.Pet
 {
     public interface IPetQuery : IQuery<SGA.Domain.Entities.Models.Pet>
     {
-        ICollection<TypePet> GetTypeAnimals();
+        ICollection<TypePet> GetTypePets();
         ICollection<SGA.Domain.Entities.Models.Pet> GetPetsNotAdopted();
     }
 }
