@@ -10,7 +10,6 @@
 
 # Arquitetura:
 - Domain Driven Design (Layers and Domain Model Pattern)
-- Domain Notification
 - CQRS (Imediate Consistency)
 - Unit of Work
 - Repository Pattern
