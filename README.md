@@ -15,6 +15,12 @@
 - Unit of Work
 - Repository Pattern
 
+# Pré Requisitos:
+- Ter instalado a sdk do asp.net core 2.1 rlc. 
+- Link para donwload: https://github.com/dotnet/versions/tree/7a833dddfddc27f2074b755b94234a25b9757637/build-info/dotnet/product/cli/release/2.1
+- ter vscode ou visual studio 2017 para rodar o projeto. 
+-  Link para donwload: https://visualstudio.microsoft.com/
+
 # Primeiros Passos:
 -  1º Configurar a string de conexão ao banco de dados no arquivo appsettings.json do projeto Código Fonte/SGA/SGA.UI.Site
 -  2º Executar os seguites commandos no Package Manager Console:
