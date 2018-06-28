@@ -18,7 +18,7 @@
 # Pré Requisitos:
 - Ter instalado a sdk do asp.net core 2.1 rlc. 
 - Link para donwload: https://github.com/dotnet/versions/tree/7a833dddfddc27f2074b755b94234a25b9757637/build-info/dotnet/product/cli/release/2.1
-- ter vscode ou visual studio 2017 para rodar o projeto. 
+- Ter vscode ou visual studio 2017 para rodar o projeto. 
 -  Link para donwload: https://visualstudio.microsoft.com/
 
 # Primeiros Passos:
