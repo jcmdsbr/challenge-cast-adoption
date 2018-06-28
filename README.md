@@ -23,8 +23,8 @@
 # Primeiros Passos:
 -  1º Configurar a string de conexão ao banco de dados no arquivo appsettings.json do projeto Código Fonte/SGA/SGA.UI.Site
 -  2º Executar os seguites commandos no Package Manager Console:
--  Update-Database -Context SgaIdentityDbContext no projeto Código Fonte/SGA/SGA.Infra.CrossCutting.Identity/
--  Update-Database -Context SGAContext no projeto Código Fonte/SGA/SGA.Infra.Data/
+-  "Update-Database -Context SgaIdentityDbContext" no projeto Código Fonte/SGA/SGA.Infra.CrossCutting.Identity/
+-  "Update-Database -Context SGAContext" no projeto Código Fonte/SGA/SGA.Infra.Data/
 
 # Login de Acesso:
 - Usuario : admin
