@@ -35,7 +35,7 @@ namespace SGA.UI.Site.Controllers
             {
                 NotifyError(Message.MS_004);
 
-                return RedirectToAction(nameof(ToAdopt), "Home");
+                return RedirectToAction(nameof(Index), "Home");
             }
 
             ViewBag.Pets = petsNotAdopted.Select(x => new SelectListItem { Value = x.Id.ToString(), Text = x.Name });
