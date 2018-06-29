@@ -1,13 +1,14 @@
-﻿using System.Linq;
-using SGA.Application.Domain.Pet;
+﻿using SGA.Application.Domain.Pet;
 using SGA.Application.Repository.Core;
 using SGA.Application.Repository.Pet;
 using SGA.Domain.Core;
 using SGA.Domain.Pet.Validations;
+using System.Linq;
+using Model = SGA.Domain.Entities.Models;
 
 namespace SGA.Domain.Pet.Commands
 {
-    public class RegisterNewPetCommand : Command<Entities.Models.Pet>, IRegisterNewPetCommand
+    public class RegisterNewPetCommand : Command<Model.Pet>, IRegisterNewPetCommand
     {
         private readonly IPetRepository _petRepository;
 
@@ -17,7 +18,7 @@ namespace SGA.Domain.Pet.Commands
             _petRepository = petRepository;
         }
 
-        public override void Execute(Entities.Models.Pet pet)
+        public override void Execute(Model.Pet pet)
         {
             var validation = new RegisterNewPetValidation().Validate(pet);
 

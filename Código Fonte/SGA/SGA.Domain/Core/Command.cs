@@ -26,7 +26,7 @@ namespace SGA.Domain.Core
             return _errors;
         }
 
-        public abstract void Execute(T entity);
+        public abstract void Execute(T obj);
 
         protected void AddError(string error)
         {
@@ -44,7 +44,7 @@ namespace SGA.Domain.Core
 
             var commandResponse = _uow.Commit();
 
-            if (commandResponse.Success) return true;
+            if (commandResponse.GetSuccess()) return true;
 
             AddError(Message.MS_003);
 

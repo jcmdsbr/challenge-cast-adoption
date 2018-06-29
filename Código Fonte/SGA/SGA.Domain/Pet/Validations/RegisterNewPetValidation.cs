@@ -7,7 +7,6 @@
         {
             ValidateName();
             ValidateDescription();
-           // ValidateType();
         }
     }
 }

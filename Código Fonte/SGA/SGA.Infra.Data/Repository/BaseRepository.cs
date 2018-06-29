@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using SGA.Application.Domain.Core;
 using SGA.Application.Repository.Core;
 using SGA.Infra.Repository.Context;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SGA.Infra.Repository.Repository
 {
@@ -21,7 +21,7 @@ namespace SGA.Infra.Repository.Repository
 
         public TEntity Find(Func<TEntity, bool> expression)
         {
-            return DbSet.AsNoTracking().AsEnumerable().Where(expression).FirstOrDefault();
+            return DbSet.AsNoTracking().AsEnumerable().FirstOrDefault(expression);
         }
 
         public ICollection<TEntity> List()

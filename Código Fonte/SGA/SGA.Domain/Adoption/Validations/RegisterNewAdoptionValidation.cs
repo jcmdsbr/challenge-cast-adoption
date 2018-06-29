@@ -6,6 +6,8 @@ namespace SGA.Domain.Adoption.Validations
 {
     public class RegisterNewAdoptionValidation
     {
+        protected RegisterNewAdoptionValidation() { }
+
         public static ValidationResult Validate(Entities.Models.Adoption adoption)
         {
             if (!adoption.GetAdoptions().Any())

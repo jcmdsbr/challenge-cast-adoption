@@ -4,10 +4,11 @@ using SGA.Application.Repository.Core;
 using SGA.Domain.Adoption.Validations;
 using SGA.Domain.Core;
 using System.Linq;
+using Model = SGA.Domain.Entities.Models;
 
 namespace SGA.Domain.Adoption.Commands
 {
-    public class RegisterNewAdoptionCommand : Command<Entities.Models.Adoption>, IRegisterNewAdoptionCommand
+    public class RegisterNewAdoptionCommand : Command<Model.Adoption>, IRegisterNewAdoptionCommand
     {
         private readonly IAdoptionRepository _adotionRepository;
 
@@ -16,9 +17,9 @@ namespace SGA.Domain.Adoption.Commands
             _adotionRepository = adotionRepository;
         }
 
-        public override void Execute(Entities.Models.Adoption adoption)
+        public override void Execute(Model.Adoption entity)
         {
-            var validation = RegisterNewAdoptionValidation.Validate(adoption);
+            var validation = RegisterNewAdoptionValidation.Validate(entity);
 
             if (!validation.IsValid)
             {
@@ -26,7 +27,7 @@ namespace SGA.Domain.Adoption.Commands
                 return;
             }
 
-            _adotionRepository.AddRange(adoption.GetAdoptions());
+            _adotionRepository.AddRange(entity.GetAdoptions());
 
             Commit();
 

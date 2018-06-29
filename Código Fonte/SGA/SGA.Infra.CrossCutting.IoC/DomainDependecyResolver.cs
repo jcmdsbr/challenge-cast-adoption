@@ -9,9 +9,9 @@ using SGA.Infra.Repository.Repository;
 
 namespace SGA.Infra.CrossCutting.IoC
 {
-    internal class DomainDependecyResolver
+    internal static class DomainDependecyResolver
     {
-        public DomainDependecyResolver(IServiceCollection services)
+        public static void Register(IServiceCollection services)
         {
             // Pet
             services.AddScoped<IPetQuery, PetRepository>();
