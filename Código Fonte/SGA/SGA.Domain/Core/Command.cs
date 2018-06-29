@@ -44,7 +44,7 @@ namespace SGA.Domain.Core
 
             var commandResponse = _uow.Commit();
 
-            if (commandResponse.GetSuccess()) return true;
+            if (commandResponse.HasSuccess()) return true;
 
             AddError(Message.MS_003);
 
