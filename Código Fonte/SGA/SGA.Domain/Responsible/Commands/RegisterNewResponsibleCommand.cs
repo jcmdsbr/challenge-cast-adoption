@@ -18,9 +18,9 @@ namespace SGA.Domain.Responsible.Commands
             _responsibleRepository = responsibleRepository;
         }
 
-        public override void Execute(Models.Responsible entity)
+        public override void Execute(Models.Responsible obj)
         {
-            var validation = new RegisterNewResponsibleValidation().Validate(entity);
+            var validation = new RegisterNewResponsibleValidation().Validate(obj);
 
             if (!validation.IsValid)
             {
@@ -28,9 +28,9 @@ namespace SGA.Domain.Responsible.Commands
                 return;
             }
 
-            entity.CreateNewId();
+            obj.CreateNewId();
 
-            _responsibleRepository.Add(entity);
+            _responsibleRepository.Add(obj);
 
             Commit();
         }

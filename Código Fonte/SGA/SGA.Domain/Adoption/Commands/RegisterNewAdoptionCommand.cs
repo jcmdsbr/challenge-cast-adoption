@@ -17,9 +17,9 @@ namespace SGA.Domain.Adoption.Commands
             _adotionRepository = adotionRepository;
         }
 
-        public override void Execute(Model.Adoption entity)
+        public override void Execute(Model.Adoption obj)
         {
-            var validation = RegisterNewAdoptionValidation.Validate(entity);
+            var validation = RegisterNewAdoptionValidation.Validate(obj);
 
             if (!validation.IsValid)
             {
@@ -27,7 +27,7 @@ namespace SGA.Domain.Adoption.Commands
                 return;
             }
 
-            _adotionRepository.AddRange(entity.GetAdoptions());
+            _adotionRepository.AddRange(obj.GetAdoptions());
 
             Commit();
 

@@ -18,9 +18,9 @@ namespace SGA.Domain.Pet.Commands
             _petRepository = petRepository;
         }
 
-        public override void Execute(Model.Pet pet)
+        public override void Execute(Model.Pet obj)
         {
-            var validation = new RegisterNewPetValidation().Validate(pet);
+            var validation = new RegisterNewPetValidation().Validate(obj);
 
             if (!validation.IsValid)
             {
@@ -28,9 +28,9 @@ namespace SGA.Domain.Pet.Commands
                 return;
             }
 
-            pet.CreateNewId();
+            obj.CreateNewId();
 
-            _petRepository.Add(pet);
+            _petRepository.Add(obj);
 
             Commit();
         }
