@@ -23,9 +23,14 @@
 # Primeiros Passos:
 -  1º Configurar a string de conexão ao banco de dados no arquivo appsettings.json do projeto Código Fonte/SGA/SGA.UI.Site
 -  2º Executar os seguites commandos no Package Manager Console:
--  "Update-Database -Context SgaIdentityDbContext" no projeto Código Fonte/SGA/SGA.Infra.CrossCutting.Identity/
--  "Update-Database -Context SGAContext" no projeto Código Fonte/SGA/SGA.Infra.Data/
 
+"Update-Database -Context SgaIdentityDbContext" no projeto Código Fonte/SGA/SGA.Infra.CrossCutting.Identity/
+
+"Update-Database -Context SGAContext" no projeto Código Fonte/SGA/SGA.Infra.Data/
+
+- 3º Rodar scripts de alimentação "SCRIPT_GENERATE_TYPE_PETS.sql" e "SCRIPT_GENERATE_USER.sql" contidos na pasta 
+"DesafioCast/Banco de Dados/"
+ 
 # Login de Acesso:
 - Usuario : admin
 - Senha: admin123
@@ -36,4 +41,5 @@
 - Implementar Log de rastreabilidade das ações efetuadas.
 - Melhorar usabilidade da aplicação.
 
-## Template Utilizado : https://startbootstrap.com/template-overviews/freelancer/ 
+## Scan Sonar: https://sonarcloud.io/dashboard?id=sga.visualstudio.com
+## Template CSS Utilizado : https://startbootstrap.com/template-overviews/freelancer/ 
