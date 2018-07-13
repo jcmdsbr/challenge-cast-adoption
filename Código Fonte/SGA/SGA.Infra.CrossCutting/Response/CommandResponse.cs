@@ -2,14 +2,20 @@
 {
     public class CommandResponse
     {
-        public static CommandResponse Ok = new CommandResponse {Success = true};
-        public static CommandResponse Fail = new CommandResponse {Success = false};
+        public static CommandResponse Ok => new CommandResponse(true);
+        public static CommandResponse Fail => new CommandResponse();
 
-        public CommandResponse(bool success = false)
+        public CommandResponse(bool value = false)
         {
-            Success = success;
+            success = value;
         }
 
-        public bool Success { get; private set; }
+        private readonly bool success;
+
+        public bool HasSuccess()
+        {
+            return success;
+        }
+
     }
 }

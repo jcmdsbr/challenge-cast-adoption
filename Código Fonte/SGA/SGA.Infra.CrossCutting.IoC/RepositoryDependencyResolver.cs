@@ -7,9 +7,9 @@ using SGA.Infra.Repository.UoW;
 
 namespace SGA.Infra.CrossCutting.IoC
 {
-    internal class RepositoryDependencyResolver
+    internal static class RepositoryDependencyResolver
     {
-        public RepositoryDependencyResolver(IServiceCollection services)
+        public static void Register(IServiceCollection services)
         {
             services.AddScoped<IPetRepository, PetRepository>();
 
