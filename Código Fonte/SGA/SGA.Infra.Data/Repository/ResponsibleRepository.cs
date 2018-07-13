@@ -1,11 +1,10 @@
-﻿using SGA.Application.Domain.Queries;
-using SGA.Application.Repository;
+﻿using SGA.Application.Repository;
 using SGA.Domain.Entities.Models;
 using SGA.Infra.Repository.Context;
 
 namespace SGA.Infra.Repository.Repository
 {
-    public class ResponsibleRepository : BaseRepository<Responsible>, IResponsibleQuery, IResponsibleRepository
+    public class ResponsibleRepository : BaseRepository<Responsible>, IResponsibleRepository
     {
         public ResponsibleRepository(SgaContext db) : base(db)
         {

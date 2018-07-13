@@ -9,6 +9,6 @@ namespace SGA.Application.Domain.Queries
     public interface IAdoptionQuery : IQuery<Adoption>
     {
         IEnumerable<AdoptionDto> GetReponsablesAndTheirAdoptions();
-        AdoptionDto FindReponsableAndTheirAdoptionsBy(Func<Responsible, bool> func);
+        AdoptionDto FindReponsableAndTheirAdoptionsBy(Guid id);
     }
 }

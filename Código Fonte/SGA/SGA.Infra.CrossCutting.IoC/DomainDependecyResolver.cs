@@ -2,7 +2,7 @@
 using SGA.Application.Domain.Commands;
 using SGA.Application.Domain.Queries;
 using SGA.Domain.Commands;
-using SGA.Infra.Repository.Repository;
+using SGA.Infra.Dapper.Queries;
 
 namespace SGA.Infra.CrossCutting.IoC
 {
@@ -11,15 +11,15 @@ namespace SGA.Infra.CrossCutting.IoC
         public static void Register(IServiceCollection services)
         {
             // Pet
-            services.AddScoped<IPetQuery, PetRepository>();
+            services.AddScoped<IPetQuery, PetQuery>();
             services.AddScoped<IRegisterNewPetCommand, RegisterNewPetCommand>();
 
             // Responsible
-            services.AddScoped<IResponsibleQuery, ResponsibleRepository>();
+            services.AddScoped<IResponsibleQuery, ResponsibleQuery>();
             services.AddScoped<IRegisterNewResponsibleCommand, RegisterNewResponsibleCommand>();
 
             // Adoption
-            services.AddScoped<IAdoptionQuery, AdoptionRepository>();
+            services.AddScoped<IAdoptionQuery, AdoptionQuery>();
             services.AddScoped<IRegisterNewAdoptionCommand, RegisterNewAdoptionCommand>();
         }
     }

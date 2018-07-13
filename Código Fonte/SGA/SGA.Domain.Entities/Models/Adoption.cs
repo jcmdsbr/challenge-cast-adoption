@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Dapper.Contrib.Extensions;
+using System;
 using System.Collections.Generic;
 
 namespace SGA.Domain.Entities.Models
 {
+    [Table("adocao")]
     public class Adoption
     {
         private readonly List<Adoption> _adoptions = new List<Adoption>();

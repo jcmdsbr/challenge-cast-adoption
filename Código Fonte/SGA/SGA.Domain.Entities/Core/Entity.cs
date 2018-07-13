@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Dapper.Contrib.Extensions;
+using System;
 
 namespace SGA.Domain.Entities.Core
 {
     public abstract class Entity
     {
+        [ExplicitKey]
         public Guid Id { get; protected set; }
 
         public override bool Equals(object obj)

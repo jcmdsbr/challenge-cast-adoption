@@ -6,7 +6,7 @@ namespace SGA.Application.Domain.Queries
 {
     public interface IPetQuery : IQuery<Pet>
     {
-        ICollection<TypePet> GetTypePets();
-        ICollection<Pet> GetPetsNotAdopted();
+        IEnumerable<TypePet> GetTypePets();
+        IEnumerable<Pet> GetPetsNotAdopted();
     }
 }

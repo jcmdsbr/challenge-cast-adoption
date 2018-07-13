@@ -1,8 +1,9 @@
-﻿using SGA.Domain.Entities.Core;
+﻿using Dapper.Contrib.Extensions;
+using SGA.Domain.Entities.Core;
 using System;
-
 namespace SGA.Domain.Entities.Models
 {
+    [Table("tipo_animal")]
     public class TypePet : Entity
     {
         public TypePet(Guid id, string description)

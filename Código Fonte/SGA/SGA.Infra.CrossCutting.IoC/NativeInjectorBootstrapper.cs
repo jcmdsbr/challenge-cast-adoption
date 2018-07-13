@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace SGA.Infra.CrossCutting.IoC
 {
@@ -6,10 +7,10 @@ namespace SGA.Infra.CrossCutting.IoC
     {
         protected NativeInjectorBootstrapper() { }
 
-        public static void RegisterServices(IServiceCollection services)
+        public static void RegisterServices(IServiceCollection services, IConfiguration configuration)
         {
             DomainDependecyResolver.Register(services);
-            RepositoryDependencyResolver.Register(services);
+            RepositoryDependencyResolver.Register(services, configuration);
         }
     }
 }

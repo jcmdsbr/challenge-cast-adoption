@@ -5,7 +5,7 @@ namespace SGA.Application.Core
 {
     public interface IQuery<TEntity>
     {
-        TEntity Find(Func<TEntity, bool> expression);
-        ICollection<TEntity> List();
+        TEntity Find(Func<TEntity, Guid> expression);
+        IEnumerable<TEntity> List();
     }
 }

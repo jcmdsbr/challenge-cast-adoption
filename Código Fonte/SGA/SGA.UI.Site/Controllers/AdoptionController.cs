@@ -46,7 +46,7 @@ namespace SGA.UI.Site.Controllers
 
                 ViewBag.Pets = petsNotAdopted.Select(x => new SelectListItem { Value = x.Id.ToString(), Text = x.Name });
 
-                return View((AdoptionViewModel)_adoptionQuery.FindReponsableAndTheirAdoptionsBy(x => x.Id == id));
+                return View((AdoptionViewModel)_adoptionQuery.FindReponsableAndTheirAdoptionsBy(id));
             }, () => RedirectToAction(nameof(Index)));
         }
 

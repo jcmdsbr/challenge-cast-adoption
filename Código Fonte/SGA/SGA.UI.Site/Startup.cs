@@ -34,7 +34,7 @@ namespace SGA.UI.Site
 
             services.AddResponseCaching();
 
-            NativeInjectorBootstrapper.RegisterServices(services);
+            NativeInjectorBootstrapper.RegisterServices(services, Configuration);
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

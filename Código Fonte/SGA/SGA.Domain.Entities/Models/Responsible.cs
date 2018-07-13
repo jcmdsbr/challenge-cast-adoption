@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Dapper.Contrib.Extensions;
 using SGA.Domain.Entities.Core;
 using SGA.Domain.Entities.ValueObjects;
+using System;
 
 namespace SGA.Domain.Entities.Models
 {
+    [Table("responsavel")]
     public class Responsible : Entity
     {
         public Responsible(Guid id, string name, Cpf cpf, Email email)
@@ -23,7 +24,7 @@ namespace SGA.Domain.Entities.Models
             Email = new Email(email);
         }
 
-        protected Responsible()  { }
+        public Responsible() { }
 
         public string Name { get; private set; }
 
