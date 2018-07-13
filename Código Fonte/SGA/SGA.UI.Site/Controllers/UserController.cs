@@ -1,17 +1,16 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using SGA.Application.UI.Models;
 using SGA.Infra.CrossCutting.Identity.Models;
-using SGA.UI.Site.Models;
-using System.Threading.Tasks;
 
 namespace SGA.UI.Site.Controllers
 {
-
     public class UserController : BaseController
     {
-        private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly UserManager<ApplicationUser> _userManager;
 
         public UserController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
         {
@@ -19,16 +18,18 @@ namespace SGA.UI.Site.Controllers
             _signInManager = signInManager;
         }
 
-        [HttpGet, AllowAnonymous]
+        [HttpGet]
+        [AllowAnonymous]
         public IActionResult Login()
         {
             return View();
         }
 
-        [HttpPost, AllowAnonymous, ValidateAntiForgeryToken]
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(UserViewModel model)
         {
-
             if (!ModelState.IsValid)
                 return View(model);
 

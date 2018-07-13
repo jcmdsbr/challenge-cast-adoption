@@ -1,10 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using SGA.Application.Domain.Adoption;
-using SGA.Application.Domain.Pet;
-using SGA.Application.Domain.Responsible;
-using SGA.Domain.Adoption.Commands;
-using SGA.Domain.Pet.Commands;
-using SGA.Domain.Responsible.Commands;
+using SGA.Application.Domain.Commands;
+using SGA.Application.Domain.Queries;
+using SGA.Domain.Commands;
 using SGA.Infra.Repository.Repository;
 
 namespace SGA.Infra.CrossCutting.IoC

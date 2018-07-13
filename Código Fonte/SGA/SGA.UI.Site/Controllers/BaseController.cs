@@ -8,7 +8,7 @@ namespace SGA.UI.Site.Controllers
     [Authorize]
     public class BaseController : Controller
     {
-        protected IActionResult SafeResult(Func<IActionResult> action)
+        protected IActionResult SafeResult(Func<IActionResult> action, Func<IActionResult> err)
         {
             try
             {
@@ -16,10 +16,9 @@ namespace SGA.UI.Site.Controllers
             }
             catch (Exception)
             {
-
                 NotifyError(Message.MS_003);
 
-                return NotFound();
+                return err();
             }
         }
 

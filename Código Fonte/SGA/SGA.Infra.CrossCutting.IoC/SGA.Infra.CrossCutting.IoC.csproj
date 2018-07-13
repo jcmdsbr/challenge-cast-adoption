@@ -7,7 +7,6 @@
   <ItemGroup>
     <ProjectReference Include="..\SGA.Application\SGA.Application.csproj" />
     <ProjectReference Include="..\SGA.Domain\SGA.Domain.csproj" />
-    <ProjectReference Include="..\SGA.Infra.CrossCutting.Identity\SGA.Infra.CrossCutting.Identity.csproj" />
     <ProjectReference Include="..\SGA.Infra.Data\SGA.Infra.Repository.csproj" />
   </ItemGroup>
 

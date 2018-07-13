@@ -9,7 +9,6 @@ namespace SGA.UI.Site
 {
     public class Startup
     {
-
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -19,7 +18,6 @@ namespace SGA.UI.Site
 
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddSgaContext(Configuration);
 
             services.AddIdentityContext(Configuration);
@@ -50,6 +48,7 @@ namespace SGA.UI.Site
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
             app.UseStaticFiles();
             app.UseAuthentication();
             app.UseResponseCaching();

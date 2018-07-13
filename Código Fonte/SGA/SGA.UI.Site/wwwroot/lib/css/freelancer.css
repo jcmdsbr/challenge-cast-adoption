@@ -100,21 +100,13 @@ section h2 {
     margin-top: 1rem;
 }
 
-    #mainNav .navbar-nav li.nav-item a.nav-link {
-        color: whitesmoke;
-    }
+#mainNav .navbar-nav li.nav-item a.nav-link { color: whitesmoke; }
 
-    #mainNav .navbar-nav li.nav-item a.nav-link:hover {
-        color: whitesmoke;
-    }
+#mainNav .navbar-nav li.nav-item a.nav-link:hover { color: whitesmoke; }
 
-        #mainNav .navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus {
-            color: whitesmoke;
-        }
+#mainNav .navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus { color: whitesmoke; }
 
-    #mainNav .navbar-nav li.nav-item a.nav-link.active {
-        color: whitesmoke;
-    }
+#mainNav .navbar-nav li.nav-item a.nav-link.active { color: whitesmoke; }
 
 #mainNav .navbar-toggler {
     font-size: 80%;
@@ -312,20 +304,15 @@ form .row:first-child .floating-label-form-group { border-top: 1px solid black; 
 
 a {
     color: mediumaquamarine
-    !important;
+!important;
 }
 
-    a:focus, a:hover, a:active {
-        color: white;
-    }
+a:focus, a:hover, a:active { color: white; }
 
-.white-color {
-    color: whitesmoke !important;
-} 
+.white-color { color: whitesmoke !important; }
 
-.black-color {
-    color:black !important;
-} 
+.black-color { color: black !important; }
+
 .btn { border-width: 2px; }
 
 .bg-primary { background-color: whitesmoke !important; }
@@ -341,10 +328,10 @@ a {
     border-color: #2c95fd;
 }
 
-    .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-        background-color: blue;
-        border-color: blue;
-    }
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: blue;
+    border-color: blue;
+}
 
 /*.btn-secondary {
     background-color: #2C3E50;

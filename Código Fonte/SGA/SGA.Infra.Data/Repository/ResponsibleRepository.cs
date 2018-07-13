@@ -1,5 +1,5 @@
-﻿using SGA.Application.Domain.Responsible;
-using SGA.Application.Repository.Responsible;
+﻿using SGA.Application.Domain.Queries;
+using SGA.Application.Repository;
 using SGA.Domain.Entities.Models;
 using SGA.Infra.Repository.Context;
 

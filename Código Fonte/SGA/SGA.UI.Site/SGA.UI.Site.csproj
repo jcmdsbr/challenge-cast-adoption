@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SGA.Application\SGA.Application.csproj" />
+    <ProjectReference Include="..\SGA.Infra.CrossCutting.Identity\SGA.Infra.CrossCutting.Identity.csproj" />
     <ProjectReference Include="..\SGA.Infra.CrossCutting.IoC\SGA.Infra.CrossCutting.IoC.csproj" />
     <ProjectReference Include="..\SGA.Infra.CrossCutting\SGA.Infra.CrossCutting.csproj" />
   </ItemGroup>

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SGA.Application.Domain.Responsible;
-using SGA.UI.Site.Models;
+using SGA.Application.Domain.Commands;
+using SGA.Application.UI.Models;
 
 namespace SGA.UI.Site.Controllers
 {
@@ -13,6 +13,7 @@ namespace SGA.UI.Site.Controllers
         {
             _command = command;
         }
+
         public IActionResult Index()
         {
             return View(new ResponsibleViewModel());
@@ -23,10 +24,7 @@ namespace SGA.UI.Site.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Index(ResponsibleViewModel model)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
+            if (!ModelState.IsValid) return View(model);
 
             _command.Execute(model);
 
@@ -40,7 +38,6 @@ namespace SGA.UI.Site.Controllers
             NotifyError(string.Join(",", _command.GetErrors()));
 
             return View(model);
-
         }
     }
 }

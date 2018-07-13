@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SGA.Domain.Entities.Models.Pet>
+﻿@model IEnumerable<PetViewModel>
 
 @if (Model.Any())
 {
@@ -25,7 +25,7 @@
                         @Html.DisplayFor(modelItem => item.Name)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.TypePet.Description)
+                        @Html.DisplayFor(modelItem => item.TypePetDescription)
                     </td>
                 </tr>
             }
@@ -37,5 +37,4 @@ else
     <div class="alert alert-info" role="alert">
         Todos os animais disponíveis já foram adotados.
     </div>
-
 }

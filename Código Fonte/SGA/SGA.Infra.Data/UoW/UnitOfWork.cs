@@ -1,4 +1,4 @@
-﻿using SGA.Application.Repository.Core;
+﻿using SGA.Application.Core;
 using SGA.Infra.CrossCutting.Response;
 using SGA.Infra.Repository.Context;
 

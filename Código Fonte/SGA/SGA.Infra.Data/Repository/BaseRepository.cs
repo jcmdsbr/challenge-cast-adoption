@@ -1,10 +1,9 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using SGA.Application.Core;
+using SGA.Infra.Repository.Context;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
-using SGA.Application.Domain.Core;
-using SGA.Application.Repository.Core;
-using SGA.Infra.Repository.Context;
 
 namespace SGA.Infra.Repository.Repository
 {

@@ -1,8 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using SGA.Application.Repository.Adoption;
-using SGA.Application.Repository.Core;
-using SGA.Application.Repository.Pet;
-using SGA.Application.Repository.Responsible;
+using SGA.Application.Core;
+using SGA.Application.Repository;
 using SGA.Infra.Repository.Context;
 using SGA.Infra.Repository.Repository;
 using SGA.Infra.Repository.UoW;

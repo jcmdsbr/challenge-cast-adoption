@@ -1,6 +1,6 @@
-﻿using SGA.Application.Domain.Adoption;
-using SGA.Application.Repository.Adoption;
-using SGA.Domain.Entities.Dtos;
+﻿using SGA.Application.Domain.Dtos;
+using SGA.Application.Domain.Queries;
+using SGA.Application.Repository;
 using SGA.Domain.Entities.Models;
 using SGA.Infra.Repository.Context;
 using System;

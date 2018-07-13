@@ -12,7 +12,6 @@ namespace SGA.UI.Site.Configurations
 {
     public static class ServiceExtensions
     {
-
         public static void AddMvcWithCustomJson(this IServiceCollection services)
         {
             services.AddMvc()
@@ -26,8 +25,7 @@ namespace SGA.UI.Site.Configurations
         public static void AddSgaContext(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<SgaContext>(options =>
-             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
-
+                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
         }
 
         public static void ConfigureIdentityOptions(this IServiceCollection services)
@@ -42,7 +40,6 @@ namespace SGA.UI.Site.Configurations
                 options.Password.RequireLowercase = false;
                 options.Password.RequiredUniqueChars = 0;
             });
-
         }
 
         public static void AddIdentityContext(this IServiceCollection services, IConfiguration configuration)
@@ -51,9 +48,8 @@ namespace SGA.UI.Site.Configurations
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
-            .AddEntityFrameworkStores<SgaIdentityDbContext>()
-            .AddDefaultTokenProviders();
-
+                .AddEntityFrameworkStores<SgaIdentityDbContext>()
+                .AddDefaultTokenProviders();
         }
     }
 }
