@@ -2,7 +2,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using SGA.Application.Core;
 using SGA.Application.Repository;
-using SGA.Infra.Dapper.Factory;
 using SGA.Infra.Repository.Context;
 using SGA.Infra.Repository.Repository;
 using SGA.Infra.Repository.UoW;
@@ -23,8 +22,6 @@ namespace SGA.Infra.CrossCutting.IoC
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddScoped<SgaContext>();
-
-            services.AddSingleton<IConnectionFactory>(new DapperConnectionFactory(configuration.GetConnectionString("DefaultConnection")));
         }
     }
 }

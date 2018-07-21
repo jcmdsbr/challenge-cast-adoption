@@ -21,7 +21,7 @@ namespace SGA.UI.Site.Controllers
 
         public IActionResult Index()
         {
-            return SafeResult(() =>
+            return SafeResultResponse(() =>
             {
                 LoadTypePets();
 
@@ -33,7 +33,7 @@ namespace SGA.UI.Site.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Index(PetViewModel model)
         {
-            return SafeResult(() =>
+            return SafeResultResponse(() =>
             {
                 if (!ModelState.IsValid)
                 {

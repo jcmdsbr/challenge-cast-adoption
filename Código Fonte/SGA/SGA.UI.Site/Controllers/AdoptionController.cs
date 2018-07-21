@@ -14,14 +14,11 @@ namespace SGA.UI.Site.Controllers
         private readonly IAdoptionQuery _adoptionQuery;
         private readonly IRegisterNewAdoptionCommand _command;
         private readonly IPetQuery _petQuery;
-        private readonly IResponsibleQuery _responsibleQuery;
 
-        public AdoptionController(IAdoptionQuery adoptionQuery, IPetQuery petQuery, IResponsibleQuery responsibleQuery,
-            IRegisterNewAdoptionCommand command)
+        public AdoptionController(IAdoptionQuery adoptionQuery, IPetQuery petQuery, IRegisterNewAdoptionCommand command)
         {
             _adoptionQuery = adoptionQuery;
             _petQuery = petQuery;
-            _responsibleQuery = responsibleQuery;
             _command = command;
         }
 
@@ -33,7 +30,7 @@ namespace SGA.UI.Site.Controllers
         [HttpGet]
         public IActionResult ToAdopt(Guid id)
         {
-            return SafeResult(() =>
+            return SafeResultResponse(() =>
             {
                 var petsNotAdopted = _petQuery.GetPetsNotAdopted();
 
@@ -47,13 +44,14 @@ namespace SGA.UI.Site.Controllers
                 ViewBag.Pets = petsNotAdopted.Select(x => new SelectListItem { Value = x.Id.ToString(), Text = x.Name });
 
                 return View((AdoptionViewModel)_adoptionQuery.FindReponsableAndTheirAdoptionsBy(id));
-            }, () => RedirectToAction(nameof(Index)));
+
+            }, err: () => RedirectToAction(nameof(Index)));
         }
 
         [HttpPost]
         public IActionResult ToAdopt(AdoptionViewModel model)
         {
-            return SafeResult(() =>
+            return SafeResultResponse(() =>
             {
                 if (!model.Pets.Any())
                 {
@@ -74,7 +72,8 @@ namespace SGA.UI.Site.Controllers
                 NotifyError(string.Join(",", _command.GetErrors()));
 
                 return RedirectToAction(nameof(ToAdopt), model.Responsible.Id);
-            }, () => RedirectToAction(nameof(Index)));
+
+            }, err: () => RedirectToAction(nameof(Index)));
         }
     }
 }

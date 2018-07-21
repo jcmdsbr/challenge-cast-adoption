@@ -8,14 +8,6 @@ namespace SGA.Domain.Entities.Models
     [Table("responsavel")]
     public class Responsible : Entity
     {
-        public Responsible(Guid id, string name, Cpf cpf, Email email)
-        {
-            Id = id;
-            Name = name;
-            Cpf = cpf;
-            Email = email;
-        }
-
         public Responsible(Guid id, string name, string cpf, string email)
         {
             Id = id;
@@ -24,13 +16,13 @@ namespace SGA.Domain.Entities.Models
             Email = new Email(email);
         }
 
-        public Responsible() { }
+        protected Responsible() { }
 
         public string Name { get; private set; }
 
-        public Cpf Cpf { get; private set; }
+        public Cpf Cpf { get; protected set; }
 
-        public Email Email { get; private set; }
+        public Email Email { get; protected set; }
 
     }
 }

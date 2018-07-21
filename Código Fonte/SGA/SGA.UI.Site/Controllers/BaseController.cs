@@ -8,15 +8,15 @@ namespace SGA.UI.Site.Controllers
     [Authorize]
     public class BaseController : Controller
     {
-        protected IActionResult SafeResult(Func<IActionResult> action, Func<IActionResult> err)
+        protected IActionResult SafeResultResponse(Func<IActionResult> action, Func<IActionResult> err)
         {
             try
             {
                 return action?.Invoke();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                NotifyError(Message.MS_003);
+                NotifyError(String.Format(Message.MS_003, e.StackTrace));
 
                 return err();
             }

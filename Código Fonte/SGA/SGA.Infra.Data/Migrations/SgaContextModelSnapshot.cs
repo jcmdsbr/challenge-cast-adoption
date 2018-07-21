@@ -130,7 +130,7 @@ namespace SGA.Infra.Repository.Migrations
                         {
                             b1.Property<Guid?>("ResponsibleId");
 
-                            b1.Property<string>("Value")
+                            b1.Property<string>("Number")
                                 .IsRequired()
                                 .HasColumnName("cpf_responsavel")
                                 .HasColumnType("varchar(11)");
@@ -147,7 +147,7 @@ namespace SGA.Infra.Repository.Migrations
                         {
                             b1.Property<Guid?>("ResponsibleId");
 
-                            b1.Property<string>("Description")
+                            b1.Property<string>("Address")
                                 .IsRequired()
                                 .HasColumnName("email_responsavel")
                                 .HasColumnType("varchar(30)");

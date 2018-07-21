@@ -13,24 +13,24 @@ namespace SGA.Domain.Entities.ValueObjects
 
         public Email(string value)
         {
-            Description = value;
+            Address = value;
         }
 
         public override string ToString()
         {
-            return Description;
+            return Address;
         }
 
-        public string Description { get; private set; }
+        public string Address { get; private set; }
 
         protected override bool EqualsCore(Email other)
         {
-            return Description == other.Description;
+            return Address == other.Address;
         }
 
         protected override int GetHashCodeCore()
         {
-            return Description.GetHashCode();
+            return Address.GetHashCode();
         }
     }
 }

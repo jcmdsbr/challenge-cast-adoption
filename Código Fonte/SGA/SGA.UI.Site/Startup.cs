@@ -4,6 +4,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SGA.Infra.CrossCutting.IoC;
 using SGA.UI.Site.Configurations;
+using System.Data.Common;
+using System.Data.SqlClient;
 
 namespace SGA.UI.Site
 {
@@ -15,13 +17,19 @@ namespace SGA.UI.Site
         }
 
         public IConfiguration Configuration { get; }
-
+        public DbConnection DbConnection => new SqlConnection(Configuration.GetConnectionString("DefaultConnection"));
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSgaContext(Configuration);
+            // Sga Context
+            services.AddSgaContext(DbConnection);
 
-            services.AddIdentityContext(Configuration);
+            // Identity Context
+            services.AddIdentityContext(DbConnection);
 
+            //  Shared Connection String for dapper
+            services.AddScoped((conn) => DbConnection);
+
+            // Configure cookie and route login
             services.ConfigureApplicationCookie(options =>
             {
                 options.Cookie.Name = "SgaCookie";

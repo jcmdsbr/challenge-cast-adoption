@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SGA.Domain.Entities.Core;
+﻿using SGA.Domain.Entities.Core;
 using SGA.Infra.CrossCutting.Extensions;
+using System;
 
 namespace SGA.Domain.Entities.ValueObjects
 {
@@ -14,26 +12,26 @@ namespace SGA.Domain.Entities.ValueObjects
 
         public Cpf(string value)
         {
-            Value = value.UnMaskCpf();
+            Number = value.UnMaskCpf();
         }
 
-        public string Value { get; private set; }
+        public string Number { get; protected set; }
 
 
         protected override bool EqualsCore(Cpf other)
         {
-            return Value == other.Value;
+            return Number == other.Number;
         }
 
         public override string ToString()
         {
-            return Value;
+            return Number;
         }
 
-        public  string Format => Convert.ToUInt64(Value).ToString(@"000\.000\.000\-00"); 
+        public string Format => Convert.ToUInt64(Number).ToString(@"000\.000\.000\-00");
         protected override int GetHashCodeCore()
         {
-            return Value.GetHashCode();
+            return Number.GetHashCode();
         }
     }
 }

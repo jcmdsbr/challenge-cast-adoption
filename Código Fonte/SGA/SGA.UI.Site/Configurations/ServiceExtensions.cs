@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using SGA.Infra.CrossCutting.Identity.Context;
 using SGA.Infra.CrossCutting.Identity.Models;
 using SGA.Infra.Repository.Context;
+using System.Data.Common;
 
 namespace SGA.UI.Site.Configurations
 {
@@ -22,10 +22,9 @@ namespace SGA.UI.Site.Configurations
                 });
         }
 
-        public static void AddSgaContext(this IServiceCollection services, IConfiguration configuration)
+        public static void AddSgaContext(this IServiceCollection services, DbConnection connection)
         {
-            services.AddDbContext<SgaContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<SgaContext>(options => options.UseSqlServer(connection));
         }
 
         public static void ConfigureIdentityOptions(this IServiceCollection services)
@@ -42,10 +41,9 @@ namespace SGA.UI.Site.Configurations
             });
         }
 
-        public static void AddIdentityContext(this IServiceCollection services, IConfiguration configuration)
+        public static void AddIdentityContext(this IServiceCollection services, DbConnection connection)
         {
-            services.AddDbContext<SgaIdentityDbContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<SgaIdentityDbContext>(options => options.UseSqlServer(connection));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<SgaIdentityDbContext>()

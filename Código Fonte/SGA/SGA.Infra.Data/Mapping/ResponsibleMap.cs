@@ -22,10 +22,10 @@ namespace SGA.Infra.Repository.Mapping
                 .IsRequired();
 
 
-            // Map Value Object
+            // Map Number Object
             builder.OwnsOne(s => s.Email, cb =>
             {
-                cb.Property(c => c.Description)
+                cb.Property(c => c.Address)
                     .HasColumnName("email_responsavel")
                     .HasColumnType("varchar(30)")
                     .IsRequired();
@@ -33,7 +33,7 @@ namespace SGA.Infra.Repository.Mapping
 
             builder.OwnsOne(s => s.Cpf, cb =>
             {
-                cb.Property(c => c.Value)
+                cb.Property(c => c.Number)
                     .HasColumnName("cpf_responsavel")
                     .HasColumnType("varchar(11)")
                     .IsRequired();

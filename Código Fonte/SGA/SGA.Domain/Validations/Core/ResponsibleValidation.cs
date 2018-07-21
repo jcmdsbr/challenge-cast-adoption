@@ -17,14 +17,14 @@ namespace SGA.Domain.Validations
 
         protected void ValidateEmail()
         {
-            RuleFor(c => c.Email.Description)
+            RuleFor(c => c.Email.Address)
                 .NotEmpty().WithMessage(string.Format(Message.MS_002, "Email"))
                 .EmailAddress().WithMessage(Message.MS_007);
         }
 
         protected void ValidateCpf()
         {
-            RuleFor(c => c.Cpf.Value)
+            RuleFor(c => c.Cpf.Number)
                 .NotEmpty().WithMessage(string.Format(Message.MS_002, "Cpf"))
                 .Must(IsValidCpf)
                 .WithMessage(Message.MS_006);

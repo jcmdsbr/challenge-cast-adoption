@@ -1,18 +1,17 @@
 ﻿using Dapper;
-using Dapper.Contrib.Extensions;
-using SGA.Application.Core;
 using SGA.Application.Domain.Queries;
 using SGA.Domain.Entities.Models;
 using SGA.Infra.Dapper.Core;
+using SGA.Infra.Dapper.Procedures;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using System.Data.Common;
 
 namespace SGA.Infra.Dapper.Queries
 {
     public class PetQuery : BaseQuery<Pet>, IPetQuery
     {
 
-        public PetQuery(IConnectionFactory connectionFactory) : base(connectionFactory)
+        public PetQuery(DbConnection connection) : base(connection)
         {
         }
 
@@ -20,9 +19,9 @@ namespace SGA.Infra.Dapper.Queries
         {
             IEnumerable<TypePet> entities;
 
-            using (var connection = new SqlConnection(_connectionFactory.GetConnection()))
+            using (var connection = _connection)
             {
-                entities = connection.GetAll<TypePet>();
+                entities = connection.Query<TypePet>(PetProcedure.GetTypePets);
             }
 
             return entities;
@@ -30,30 +29,20 @@ namespace SGA.Infra.Dapper.Queries
 
         public IEnumerable<Pet> GetPetsNotAdopted()
         {
-            var sql = string.Empty;
+            IEnumerable<Pet> pets;
 
-            sql += " SELECT[cd_animal] as Id";
-            sql += " ,[nm_animal] as Naem";
-            sql += " ,[dc_animal] as Description";
-            sql += " ,[animal].[cd_tipo_animal] as TypePetId";
-            sql += " ,t.cd_tipo_animal as split";
-            sql += " ,t.[dc_tipo_animal] as Description";
-            sql += " FROM[SGA].[dbo].[animal]";
-            sql += " INNER JOIN [dbo].[tipo_animal] as t on  t.cd_tipo_animal = [animal].[cd_tipo_animal]";
-            sql += " WHERE NOT EXISTS(select cd_animal from adocao)";
-
-            using (var connection = new SqlConnection(_connectionFactory.GetConnection()))
+            using (var connection = _connection)
             {
-                var pets = connection.Query<Pet, TypePet, Pet>(sql, (p, t) =>
-                {
-                    p.SetTypePet(t);
-
-                    return p;
-
-                }, splitOn: "split");
+                pets = connection.Query<Pet, TypePet, Pet>(
+                    PetProcedure.GetPetsNotAdopted,
+                    (p, t) =>
+                           {
+                               p.SetTypePet(t);
+                               return p;
+                           }, splitOn: "split");
             }
 
-            return null;
+            return pets;
         }
     }
 }

@@ -10,6 +10,7 @@
     <Compile Remove="Migrations\20180625231511_SGA Migration.cs" />
     <Compile Remove="Migrations\20180625231823_SGAMigration.cs" />
     <Compile Remove="Migrations\20180626011046_SgaMigration.cs" />
+    <Compile Remove="Migrations\20180626011521_SgaMigration.cs" />
   </ItemGroup>
 
   <ItemGroup>

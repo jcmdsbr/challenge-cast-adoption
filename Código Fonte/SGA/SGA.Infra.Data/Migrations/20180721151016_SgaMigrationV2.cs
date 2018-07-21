@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SGA.Infra.Repository.Migrations
 {
-    public partial class SgaMigration : Migration
+    public partial class SgaMigrationV2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

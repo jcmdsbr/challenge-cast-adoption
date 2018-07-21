@@ -2,24 +2,24 @@
 using SGA.Application.Core;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using System.Data.Common;
 
 namespace SGA.Infra.Dapper.Core
 {
-    public class BaseQuery<T> : IQuery<T> where T : class, new()
+    public class BaseQuery<T> : IQuery<T> where T : class
     {
-        protected readonly IConnectionFactory _connectionFactory;
+        protected readonly DbConnection _connection;
 
-        public BaseQuery(IConnectionFactory connectionFactory)
+        public BaseQuery(DbConnection connection)
         {
-            _connectionFactory = connectionFactory;
+            _connection = connection;
         }
 
         public T Find(Func<T, Guid> id)
         {
             T entity;
 
-            using (var connection = new SqlConnection(_connectionFactory.GetConnection()))
+            using (var connection = _connection)
             {
                 entity = connection.Get<T>(id);
             }
@@ -31,7 +31,7 @@ namespace SGA.Infra.Dapper.Core
         {
             IEnumerable<T> entities;
 
-            using (var connection = new SqlConnection(_connectionFactory.GetConnection()))
+            using (var connection = _connection)
             {
                 entities = connection.GetAll<T>();
             }

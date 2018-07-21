@@ -16,7 +16,7 @@ namespace SGA.UI.Site.Controllers
 
         public IActionResult Index()
         {
-            return SafeResult(() => View(_petQuery.GetPetsNotAdopted().Select(x => (PetViewModel)x)), () => RedirectToAction(nameof(Index)));
+            return SafeResultResponse(() => View(_petQuery.GetPetsNotAdopted().Select(x => (PetViewModel)x)), () => NotFound());
         }
     }
 }
