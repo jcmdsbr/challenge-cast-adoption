@@ -30,6 +30,8 @@ namespace SGA.UI.Site.Controllers
         [HttpGet]
         public IActionResult ToAdopt(Guid id)
         {
+            KeepErrorNotifications();
+
             return SafeResultResponse(() =>
             {
                 var petsNotAdopted = _petQuery.GetPetsNotAdopted();
@@ -38,14 +40,16 @@ namespace SGA.UI.Site.Controllers
                 {
                     NotifyError(Message.MS_004);
 
-                    return RedirectToAction(nameof(Index), "Home");
+                    return RedirectToHome();
                 }
 
                 ViewBag.Pets = petsNotAdopted.Select(x => new SelectListItem { Value = x.Id.ToString(), Text = x.Name });
 
-                return View((AdoptionViewModel)_adoptionQuery.FindReponsableAndTheirAdoptionsBy(id));
+                var adoption = _adoptionQuery.FindReponsableAndTheirAdoptionsBy(id);
 
-            }, err: () => RedirectToAction(nameof(Index)));
+                return View((AdoptionViewModel)adoption);
+
+            }, err: RedirectToHome);
         }
 
         [HttpPost]
@@ -66,14 +70,14 @@ namespace SGA.UI.Site.Controllers
                 {
                     NotifySucess();
 
-                    return RedirectToAction(nameof(Index), "Home");
+                    return RedirectToHome();
                 }
 
                 NotifyError(string.Join(",", _command.GetErrors()));
 
                 return RedirectToAction(nameof(ToAdopt), model.Responsible.Id);
 
-            }, err: () => RedirectToAction(nameof(Index)));
+            }, err: RedirectToHome);
         }
     }
 }

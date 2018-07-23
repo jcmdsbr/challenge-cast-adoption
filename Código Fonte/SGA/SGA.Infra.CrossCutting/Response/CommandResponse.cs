@@ -2,20 +2,19 @@
 {
     public class CommandResponse
     {
-        public static CommandResponse Ok => new CommandResponse(true);
-        public static CommandResponse Fail => new CommandResponse();
+        private readonly bool success;
 
         public CommandResponse(bool value = false)
         {
             success = value;
         }
 
-        private readonly bool success;
+        public static CommandResponse Ok => new CommandResponse(true);
+        public static CommandResponse Fail => new CommandResponse();
 
         public bool HasSuccess()
         {
             return success;
         }
-
     }
 }

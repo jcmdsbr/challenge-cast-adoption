@@ -11,6 +11,8 @@ namespace SGA.UI.Site.Controllers
 
         public HomeController(IPetQuery petQuery)
         {
+            KeepErrorNotifications();
+
             _petQuery = petQuery;
         }
 

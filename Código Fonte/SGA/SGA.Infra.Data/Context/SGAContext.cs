@@ -6,7 +6,9 @@ namespace SGA.Infra.Repository.Context
 {
     public sealed class SgaContext : DbContext
     {
-        public SgaContext(DbContextOptions<SgaContext> options) : base(options) { }
+        public SgaContext(DbContextOptions<SgaContext> options) : base(options)
+        {
+        }
 
         public DbSet<Pet> Animals { get; set; }
         public DbSet<TypePet> TypeAnimals { get; set; }

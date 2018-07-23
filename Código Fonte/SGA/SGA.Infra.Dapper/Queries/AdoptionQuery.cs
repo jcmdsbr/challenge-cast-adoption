@@ -1,19 +1,20 @@
 ﻿using Dapper;
+using SGA.Application.Core;
 using SGA.Application.Domain.Dtos;
 using SGA.Application.Domain.Queries;
 using SGA.Domain.Entities.Models;
+using SGA.Domain.Entities.ValueObjects;
 using SGA.Infra.Dapper.Core;
 using SGA.Infra.Dapper.Procedures;
 using System;
 using System.Collections.Generic;
-using System.Data.Common;
 using System.Linq;
 
 namespace SGA.Infra.Dapper.Queries
 {
     public class AdoptionQuery : BaseQuery<Adoption>, IAdoptionQuery
     {
-        public AdoptionQuery(DbConnection connection) : base(connection)
+        public AdoptionQuery(IConnectionFactory connection) : base(connection)
         {
         }
 
@@ -21,20 +22,21 @@ namespace SGA.Infra.Dapper.Queries
         {
             IEnumerable<AdoptionDto> adoptions;
 
-            using (var connection = _connection)
+            using (var connection = ConnectionFactory.GetConnection())
             {
-                adoptions = connection.Query<AdoptionDto, Responsible, AdoptionDto>(
+                adoptions = connection.Query<AdoptionDto, Responsible, Cpf, Email, AdoptionDto>(
                     AdoptionProcedure.GetReponsablesAndTheirAdoptions,
-                    (ad, res) =>
-                      {
-                          ad.Responsible = res;
-                          return ad;
-                      }, splitOn: "split");
+                    (ad, res, cpf, email) =>
+                    {
+                        res.SetCpf(cpf);
+                        res.SetEmail(email);
+                        ad.Responsible = res;
+                        return ad;
+                    }, splitOn: "split, splitCpf, splitEmail");
             }
 
             return adoptions;
         }
-
 
         public AdoptionDto FindReponsableAndTheirAdoptionsBy(Guid id)
         {
@@ -42,13 +44,17 @@ namespace SGA.Infra.Dapper.Queries
 
             AdoptionDto adoptionDto;
 
-            using (var connection = _connection)
+            using (var connection = ConnectionFactory.GetConnection())
             {
-                adoptionDto = connection.Query<AdoptionDto, Responsible, AdoptionDto>(sql, (ad, res) =>
-                {
-                    ad.Responsible = res;
-                    return ad;
-                }, splitOn: "split").Single();
+                adoptionDto = connection.Query<AdoptionDto, Responsible, Cpf, Email, AdoptionDto>(
+                    sql,
+                    (ad, res, cpf, email) =>
+                    {
+                        res.SetCpf(cpf);
+                        res.SetEmail(email);
+                        ad.Responsible = res;
+                        return ad;
+                    }, splitOn: "split, splitCpf, splitEmail").SingleOrDefault();
             }
 
             return adoptionDto;

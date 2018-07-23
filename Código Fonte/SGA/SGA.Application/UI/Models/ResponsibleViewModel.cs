@@ -11,16 +11,16 @@ namespace SGA.Application.UI.Models
     {
         public ResponsibleViewModel()
         {
-
         }
+
         public ResponsibleViewModel(Guid id, string name, string email, string cpf)
         {
             Id = id;
             Name = name;
             Email = email;
             Cpf = cpf;
-
         }
+
         [Key] public Guid Id { get; set; }
 
         [RequiredCustom("Nome")]
@@ -34,28 +34,21 @@ namespace SGA.Application.UI.Models
         public string Email { get; set; }
 
         [RequiredCustom("Cpf")]
-        [Cpf(Message.MS_007)]
+        [Cpf(Message.MS_006)]
         [DisplayName("CPF")]
         public string Cpf { get; set; }
 
         public static implicit operator Responsible(ResponsibleViewModel model)
         {
-
-            if (model == null)
-                return null;
-
-            return new Responsible(model.Id, model.Name, model.Cpf, model.Email);
+            return model == null ? null : new Responsible(model.Id, model.Name, model.Cpf, model.Email);
         }
 
 
         public static explicit operator ResponsibleViewModel(Responsible model)
         {
-
-            if (model == null)
-                return null;
-
-            return new ResponsibleViewModel(model.Id, model.Name, model.Email.ToString(), model.Cpf.Format);
+            return model == null
+                ? null
+                : new ResponsibleViewModel(model.Id, model.Name, model.Email.ToString(), model.Cpf.Format);
         }
-
     }
 }

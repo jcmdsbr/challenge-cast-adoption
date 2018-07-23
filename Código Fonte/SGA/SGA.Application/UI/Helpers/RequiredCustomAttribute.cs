@@ -9,6 +9,5 @@ namespace SGA.Application.UI.Helpers
         {
             ErrorMessage = string.Format(Message.MS_002, name);
         }
-
     }
 }

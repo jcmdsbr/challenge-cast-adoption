@@ -18,11 +18,23 @@ namespace SGA.Domain.Entities.Models
 
         protected Responsible() { }
 
-        public string Name { get; private set; }
+        public string Name { get; protected set; }
 
         public Cpf Cpf { get; protected set; }
 
         public Email Email { get; protected set; }
 
+        public void SetEmail(Email email)
+        {
+            //Todo: Add Email  Validation here
+
+            Email = email;
+        }
+
+        public void SetCpf(Cpf cpf)
+        {
+            //Todo: Add Cpf Validation here
+            Cpf = cpf;
+        }
     }
 }

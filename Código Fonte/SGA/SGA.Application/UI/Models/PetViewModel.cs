@@ -18,7 +18,9 @@ namespace SGA.Application.UI.Models
             TypePetDescription = typePetDescription;
         }
 
-        public PetViewModel() { }
+        public PetViewModel()
+        {
+        }
 
         [Key] public Guid Id { get; set; }
 
@@ -37,13 +39,11 @@ namespace SGA.Application.UI.Models
         public Guid TypePetId { get; set; }
 
 
-        [DisplayName("Tipo do Animal")]
-        public string TypePetDescription { get; set; }
+        [DisplayName("Tipo do Animal")] public string TypePetDescription { get; set; }
 
 
         public static implicit operator Pet(PetViewModel model)
         {
-
             if (model == null)
                 return null;
 
@@ -52,12 +52,10 @@ namespace SGA.Application.UI.Models
 
         public static explicit operator PetViewModel(Pet pet)
         {
-
             if (pet == null)
                 return null;
 
             return new PetViewModel(pet.Id, pet.Name, pet.Description, pet.TypePetId, pet.TypePet.Description);
         }
     }
-
 }

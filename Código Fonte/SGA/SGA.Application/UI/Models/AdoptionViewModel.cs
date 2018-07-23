@@ -9,16 +9,8 @@ namespace SGA.Application.UI.Models
 {
     public class AdoptionViewModel
     {
-        public ResponsibleViewModel Responsible { get; set; }
-        public int AdoptedPets { get; set; }
-
-        public string PetsJson { get; set; }
-
-        public List<Guid> Pets => JsonConvert.DeserializeObject<List<Guid>>(PetsJson);
-
         public AdoptionViewModel()
         {
-
         }
 
         public AdoptionViewModel(ResponsibleViewModel responsible, int adoptedPets)
@@ -26,9 +18,16 @@ namespace SGA.Application.UI.Models
             Responsible = responsible;
             AdoptedPets = adoptedPets;
         }
+
+        public ResponsibleViewModel Responsible { get; set; }
+        public int AdoptedPets { get; set; }
+
+        public string PetsJson { get; set; }
+
+        public List<Guid> Pets => JsonConvert.DeserializeObject<List<Guid>>(PetsJson);
+
         public static explicit operator AdoptionViewModel(AdoptionDto model)
         {
-
             if (model == null)
                 return null;
 
@@ -37,7 +36,6 @@ namespace SGA.Application.UI.Models
 
         public static implicit operator Adoption(AdoptionViewModel model)
         {
-
             if (model == null)
                 return null;
 

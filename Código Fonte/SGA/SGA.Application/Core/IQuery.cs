@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SGA.Application.Core
+﻿namespace SGA.Application.Core
 {
-    public interface IQuery<TEntity>
+    public interface IQuery<T> where T : class
     {
-        TEntity Find(Func<TEntity, Guid> expression);
-        IEnumerable<TEntity> List();
     }
 }

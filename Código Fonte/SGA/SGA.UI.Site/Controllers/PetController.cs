@@ -26,7 +26,8 @@ namespace SGA.UI.Site.Controllers
                 LoadTypePets();
 
                 return View(new PetViewModel());
-            }, () => RedirectToAction(nameof(Index)));
+
+            }, RedirectToHome);
         }
 
         [HttpPost]
@@ -48,7 +49,7 @@ namespace SGA.UI.Site.Controllers
                 {
                     NotifySucess();
 
-                    return RedirectToAction(nameof(Index), "Home");
+                    return RedirectToHome();
                 }
 
                 LoadTypePets();
@@ -56,7 +57,8 @@ namespace SGA.UI.Site.Controllers
                 NotifyError(string.Join(",", _command.GetErrors()));
 
                 return View(model);
-            }, () => RedirectToAction(nameof(Index)));
+
+            }, RedirectToHome);
         }
 
         private void LoadTypePets()

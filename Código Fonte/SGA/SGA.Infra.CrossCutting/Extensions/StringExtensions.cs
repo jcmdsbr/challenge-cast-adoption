@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SGA.Infra.CrossCutting.Extensions
+﻿namespace SGA.Infra.CrossCutting.Extensions
 {
     public static class StringExtensions
     {

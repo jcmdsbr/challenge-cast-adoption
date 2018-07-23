@@ -1,7 +1,10 @@
-﻿namespace SGA.Application.Core
+﻿using System;
+using System.Data.Common;
+
+namespace SGA.Application.Core
 {
-    public interface IConnectionFactory
+    public interface IConnectionFactory : IDisposable
     {
-        string GetConnection();
+        DbConnection GetConnection();
     }
 }

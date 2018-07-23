@@ -2,8 +2,8 @@
 {
     public static class PetProcedure
     {
-
-        public const string GetTypePets = "SELECT [cd_tipo_animal] as Id, [dc_tipo_animal] as Description FROM[SGA].[dbo].[tipo_animal]";
+        public const string GetTypePets =
+            "SELECT [cd_tipo_animal] as Id, [dc_tipo_animal] as Description FROM[SGA].[dbo].[tipo_animal]";
 
         public const string GetPetsNotAdopted =
             " SELECT[cd_animal] as Id, [nm_animal] as Name, [dc_animal] as Description, [animal].[cd_tipo_animal] as TypePetId, " +

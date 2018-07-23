@@ -8,6 +8,10 @@ namespace SGA.UI.Site.Controllers
     [Authorize]
     public class BaseController : Controller
     {
+
+        protected const string ErrorNotifications = "ErrorNotifications";
+        protected const string Success = "Success";
+
         protected IActionResult SafeResultResponse(Func<IActionResult> action, Func<IActionResult> err)
         {
             try
@@ -16,7 +20,7 @@ namespace SGA.UI.Site.Controllers
             }
             catch (Exception e)
             {
-                NotifyError(String.Format(Message.MS_003, e.StackTrace));
+                NotifyError(string.Format(Message.MS_003));
 
                 return err();
             }
@@ -25,12 +29,24 @@ namespace SGA.UI.Site.Controllers
 
         protected void NotifyError(string message)
         {
-            TempData["ErrorNotifications"] = message;
+            TempData[ErrorNotifications] = message;
         }
 
         protected void NotifySucess()
         {
-            TempData["Success"] = Message.MS_001;
+            TempData[Success] = Message.MS_001;
+        }
+
+        protected IActionResult RedirectToHome()
+        {
+            return RedirectToAction("Index", "Home");
+        }
+
+        protected void KeepErrorNotifications()
+        {
+            if (TempData != null && TempData.ContainsKey(ErrorNotifications))
+                TempData.Keep(ErrorNotifications);
+
         }
     }
 }

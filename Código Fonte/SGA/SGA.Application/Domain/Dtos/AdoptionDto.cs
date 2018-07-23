@@ -6,7 +6,6 @@ namespace SGA.Application.Domain.Dtos
     {
         public AdoptionDto()
         {
-
         }
 
         public AdoptionDto(Responsible responsible, int adoptedPets)

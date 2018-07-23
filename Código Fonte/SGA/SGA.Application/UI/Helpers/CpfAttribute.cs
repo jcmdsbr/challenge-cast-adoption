@@ -9,6 +9,7 @@ namespace SGA.Application.UI.Helpers
         {
             ErrorMessage = erroMessage;
         }
+
         public override bool IsValid(object value)
         {
             var cpf = (string)value;

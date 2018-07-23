@@ -5,8 +5,8 @@ namespace SGA.Application.UI.Helpers
 {
     public sealed class LengthValidationAttribute : ValidationAttribute
     {
-        private readonly int _minLength;
         private readonly int _maxLength;
+        private readonly int _minLength;
 
         public LengthValidationAttribute(int minLength, int maxLength, string name)
         {
