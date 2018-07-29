@@ -3,12 +3,14 @@ using SGA.Application.Core;
 using SGA.Application.Domain.Queries;
 using SGA.Domain.Entities.Models;
 using SGA.Infra.Dapper.Core;
+using SGA.Infra.Dapper.Maps;
 using SGA.Infra.Dapper.Procedures;
 using System.Collections.Generic;
+using System.Data;
 
 namespace SGA.Infra.Dapper.Queries
 {
-    public class PetQuery : BaseQuery<Pet>, IPetQuery
+    public class PetQuery : Query<Pet>, IPetQuery
     {
         public PetQuery(IConnectionFactory connection) : base(connection)
         {
@@ -16,14 +18,16 @@ namespace SGA.Infra.Dapper.Queries
 
         public IEnumerable<TypePet> GetTypePets()
         {
-            IEnumerable<TypePet> entities;
+            IEnumerable<TypePet> typesPets;
 
             using (var connection = ConnectionFactory.GetConnection())
             {
-                entities = connection.Query<TypePet>(PetProcedure.GetTypePets);
+                typesPets = connection.Query<TypePet>(
+                    PetProcedure.GetTypePets,
+                    commandType: CommandType.StoredProcedure);
             }
 
-            return entities;
+            return typesPets;
         }
 
         public IEnumerable<Pet> GetPetsNotAdopted()
@@ -32,13 +36,11 @@ namespace SGA.Infra.Dapper.Queries
 
             using (var connection = ConnectionFactory.GetConnection())
             {
-                pets = connection.Query<Pet, TypePet, Pet>(
+                pets = connection.Query(
                     PetProcedure.GetPetsNotAdopted,
-                    (p, t) =>
-                    {
-                        p.SetTypePet(t);
-                        return p;
-                    }, splitOn: "split");
+                    PetMap.FullPet(),
+                    splitOn: "split",
+                    commandType: CommandType.StoredProcedure);
             }
 
             return pets;

@@ -2,11 +2,11 @@
 
 namespace SGA.Infra.Dapper.Core
 {
-    public class BaseQuery<T> : IQuery<T> where T : class
+    public class Query<T> : IQuery<T> where T : class
     {
         protected readonly IConnectionFactory ConnectionFactory;
 
-        public BaseQuery(IConnectionFactory connection)
+        public Query(IConnectionFactory connection)
         {
             ConnectionFactory = connection;
         }

@@ -3,16 +3,17 @@ using SGA.Application.Core;
 using SGA.Application.Domain.Dtos;
 using SGA.Application.Domain.Queries;
 using SGA.Domain.Entities.Models;
-using SGA.Domain.Entities.ValueObjects;
 using SGA.Infra.Dapper.Core;
+using SGA.Infra.Dapper.Maps;
 using SGA.Infra.Dapper.Procedures;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 
 namespace SGA.Infra.Dapper.Queries
 {
-    public class AdoptionQuery : BaseQuery<Adoption>, IAdoptionQuery
+    public class AdoptionQuery : Query<Adoption>, IAdoptionQuery
     {
         public AdoptionQuery(IConnectionFactory connection) : base(connection)
         {
@@ -24,15 +25,12 @@ namespace SGA.Infra.Dapper.Queries
 
             using (var connection = ConnectionFactory.GetConnection())
             {
-                adoptions = connection.Query<AdoptionDto, Responsible, Cpf, Email, AdoptionDto>(
+                adoptions = connection.Query(
                     AdoptionProcedure.GetReponsablesAndTheirAdoptions,
-                    (ad, res, cpf, email) =>
-                    {
-                        res.SetCpf(cpf);
-                        res.SetEmail(email);
-                        ad.Responsible = res;
-                        return ad;
-                    }, splitOn: "split, splitCpf, splitEmail");
+                    AdoptionMap.AdoptionDto(),
+                    splitOn: "split, splitCpf, splitEmail",
+                    commandType: CommandType.StoredProcedure
+                ).AsQueryable();
             }
 
             return adoptions;
@@ -40,21 +38,21 @@ namespace SGA.Infra.Dapper.Queries
 
         public AdoptionDto FindReponsableAndTheirAdoptionsBy(Guid id)
         {
-            var sql = string.Format(AdoptionProcedure.FindReponsableAndTheirAdoptionsById, id);
+            var parameters = new DynamicParameters();
+
+            parameters.Add("@cd_responsavel", id);
 
             AdoptionDto adoptionDto;
 
             using (var connection = ConnectionFactory.GetConnection())
             {
-                adoptionDto = connection.Query<AdoptionDto, Responsible, Cpf, Email, AdoptionDto>(
-                    sql,
-                    (ad, res, cpf, email) =>
-                    {
-                        res.SetCpf(cpf);
-                        res.SetEmail(email);
-                        ad.Responsible = res;
-                        return ad;
-                    }, splitOn: "split, splitCpf, splitEmail").SingleOrDefault();
+                adoptionDto = connection.Query(
+                    AdoptionProcedure.FindReponsableAndTheirAdoptionsById,
+                    AdoptionMap.AdoptionDto(),
+                    parameters,
+                    splitOn: "split, splitCpf, splitEmail",
+                    commandType: CommandType.StoredProcedure
+                ).SingleOrDefault();
             }
 
             return adoptionDto;
