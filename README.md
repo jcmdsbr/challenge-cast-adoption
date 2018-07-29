@@ -35,6 +35,7 @@
 --> "Update-Database -Context SGAContext" no projeto Código Fonte/SGA/SGA.Infra.Data/
 
 - 3º Rodar scripts de alimentação que estão na pasta "DesafioCast/Banco de Dados/":
+
 --> "SCRIPT_GENERATE_TYPE_PETS.sql"  
 --> "SCRIPT_GENERATE_USER.sql" contidos na pasta 
 
