@@ -9,6 +9,7 @@
 - Entity Framework Core 2.1
 - .NET Core Native DI
 - FluentValidator
+- Dapper
 
 # Arquitetura:
 
@@ -54,7 +55,3 @@
 - Implementar Log de rastreabilidade das ações efetuadas.
 - Melhorar usabilidade da aplicação.
 
-#Informações adicionais
-
- - Scan Sonar: https://sonarcloud.io/dashboard?id=sga.visualstudio.com
- - Template CSS Utilizado : https://startbootstrap.com/template-overviews/freelancer/ 
