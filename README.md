@@ -1,4 +1,4 @@
-# DesafioCast
+# Desafio Cast
 
 - Aplicação voltada para controle de adoções de animais utilizando  ASP.NET Core 2.1 com DDD e CQRS.
 
