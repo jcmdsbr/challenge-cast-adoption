@@ -9,7 +9,7 @@ Se esse projeto te ajudou em alguma coisa, taquele pau na estrelinha \o/
 ## Para rodar esse projeto, você vai precisar das seguintes ferramentas :exclamation:
 
 - Visual Studio 2019, Visual Studio Code or Rider
-- .Net Core 5.X +
+- .Net Core 2.X +
 
 ## Tecnologias Implementadas 🚧
 
